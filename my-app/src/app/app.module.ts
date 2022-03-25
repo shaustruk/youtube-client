@@ -8,6 +8,10 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SearchAreaComponent } from './search-area/search-area.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { SortsSearchAreaComponent } from './sorts-search-area/sorts-search-area.component';
+import { SearchResultModelComponent } from './search-result-model/search-result-model.component';
+import { SearchItemModelComponent } from './search-item-model/search-item-model.component';
+import { SearchItemComponent } from './search-item/search-item.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,10 @@ import { SortsSearchAreaComponent } from './sorts-search-area/sorts-search-area.
     SearchAreaComponent,
     UserInfoComponent,
     SortsSearchAreaComponent,
+    SearchResultModelComponent,
+    SearchItemModelComponent,
+    SearchItemComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
