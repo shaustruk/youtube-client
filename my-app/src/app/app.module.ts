@@ -8,7 +8,6 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { SearchAreaComponent } from './search-area/search-area.component';
 import { UserInfoComponent } from './user-info/user-info.component';
 import { SortsSearchAreaComponent } from './sorts-search-area/sorts-search-area.component';
-import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +17,12 @@ import { CardComponent } from './card/card.component';
     SearchAreaComponent,
     UserInfoComponent,
     SortsSearchAreaComponent,
-    CardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
