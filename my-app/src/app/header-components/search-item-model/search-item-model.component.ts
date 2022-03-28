@@ -51,13 +51,16 @@ export interface IItem {
 @Component({
   selector: 'app-search-item-model',
   templateUrl: './search-item-model.component.html',
-  styleUrls: ['./search-item-model.component.scss']
+  styleUrls: ['./search-item-model.component.scss'],
 })
 export class SearchItemModelComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log();
+  }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

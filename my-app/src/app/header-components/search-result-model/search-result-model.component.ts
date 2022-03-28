@@ -18,13 +18,16 @@ export interface IItems {
 @Component({
   selector: 'app-search-result-model',
   templateUrl: './search-result-model.component.html',
-  styleUrls: ['./search-result-model.component.scss']
+  styleUrls: ['./search-result-model.component.scss'],
 })
 export class SearchResultModelComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log();
+  }
 
   ngOnInit(): void {
+    console.log();
   }
 
 }

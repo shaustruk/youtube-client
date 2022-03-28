@@ -24,7 +24,7 @@ import { SearchResultsComponent } from './header-components/search-results/searc
     SearchResultModelComponent,
     SearchItemModelComponent,
     SearchItemComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
