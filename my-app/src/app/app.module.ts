@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './header-components/header/header.component';
 import { MainPageComponent } from './main-page/main-page.component';
-import { SearchAreaComponent } from './search-area/search-area.component';
-import { UserInfoComponent } from './user-info/user-info.component';
-import { SortsSearchAreaComponent } from './sorts-search-area/sorts-search-area.component';
-import { SearchResultModelComponent } from './search-result-model/search-result-model.component';
-import { SearchItemModelComponent } from './search-item-model/search-item-model.component';
-import { SearchItemComponent } from './search-item/search-item.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
+import { SearchAreaComponent } from './header-components/search-area/search-area.component';
+import { UserInfoComponent } from './header-components/user-info/user-info.component';
+import { SortsSearchAreaComponent } from './header-components/sorts-search-area/sorts-search-area.component';
+import { SearchResultModelComponent } from './header-components/search-result-model/search-result-model.component';
+import { SearchItemModelComponent } from './header-components/search-item-model/search-item-model.component';
+import { SearchItemComponent } from './header-components/search-item/search-item.component';
+import { SearchResultsComponent } from './header-components/search-results/search-results.component';
 
 @NgModule({
   declarations: [
