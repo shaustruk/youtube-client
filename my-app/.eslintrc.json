@@ -14,14 +14,14 @@
         ],
         "createDefaultProgram": true
       },
+      "plugins": ["import"],
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "airbnb-typescript/base",
-        "airbnb-base"
+        "airbnb-typescript/base"
+        // "airbnb-base"
       ],
-      "plugins": ["import"],
-      "rules": {
+         "rules": {
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -42,7 +42,9 @@
         "import/prefer-default-export": "off",
         "no-useless-constructor":"off",
         "no-empty-function":"off",
-        "class-methods-use-this":"off"
+        "class-methods-use-this":"off",
+        "no-undef":"off"
+        // "eslint linebreak-style": "off"
               }
     },
     {
