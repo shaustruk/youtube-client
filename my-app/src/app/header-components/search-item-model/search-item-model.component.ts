@@ -54,7 +54,6 @@ export interface IItem {
   styleUrls: ['./search-item-model.component.scss'],
 })
 export class SearchItemModelComponent implements OnInit {
-
   constructor() {
     console.log();
   }
@@ -62,5 +61,4 @@ export class SearchItemModelComponent implements OnInit {
   ngOnInit(): void {
     console.log();
   }
-
 }
