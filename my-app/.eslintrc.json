@@ -17,8 +17,8 @@
         "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-        "airbnb-typescript/base"
-        // "airbnb-base"
+        "airbnb-typescript/base",
+        "airbnb-base"
       ],
       "plugins": ["import"],
          "rules": {
@@ -39,7 +39,7 @@
           }
         ],
         "no-console": "off",
-        "import/prefer-default-export": "off",
+        "import/prefer-default-export": "on",
         "no-useless-constructor":"off",
         "no-empty-function":"off",
         "class-methods-use-this":"off"

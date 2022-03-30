@@ -4,11 +4,13 @@
   align-items: center;
   height: 100%;
   width: 100%;
+  margin-right: 0.5rem;
 
   &__input {
     display: block;
     align-self: center;
-    height: 24px;
+    padding: 00.5rem;
+    height: 40px;
     width: 30em;
     background-color: #efefef;
     cursor: pointer;
@@ -17,7 +19,7 @@
   &__btn-search {
     display: block;
     width: 80px;
-    height: 24px;
+    height: 40px;
     background-color: #2f80ed;
     color: #ffffff;
   }
