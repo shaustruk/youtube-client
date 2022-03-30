@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-results.component.scss'],
 })
 export class SearchResultsComponent implements OnInit {
-
   constructor() {
     console.log();
   }
@@ -14,5 +13,4 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit(): void {
     console.log();
   }
-
 }

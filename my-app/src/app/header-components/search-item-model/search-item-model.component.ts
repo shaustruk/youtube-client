@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface IIMg {
   url: string,
@@ -53,12 +53,10 @@ export interface IItem {
   templateUrl: './search-item-model.component.html',
   styleUrls: ['./search-item-model.component.scss'],
 })
-export class SearchItemModelComponent implements OnInit {
+export class SearchItemModelComponent {
   constructor() {
     console.log();
   }
 
-  ngOnInit(): void {
-    console.log();
-  }
+
 }

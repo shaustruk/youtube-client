@@ -1,0 +1,14 @@
+.user-info {
+  display: flex;
+  margin-left: auto;
+
+  &__info {
+    align-self: center;
+    margin-right: 0.5rem;
+  }
+
+  &__icon-user {
+    height: 2rem;
+    width: 2rem;
+  }
+}

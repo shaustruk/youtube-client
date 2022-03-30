@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-area.component.scss'],
 })
 export class SearchAreaComponent implements OnInit {
+  public search = 'What are you want to find out?';
+
+  public btn = 'search';
+
   constructor() {
     console.log();
   }
