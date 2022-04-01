@@ -1,3 +1,10 @@
-<div class="section sorts-area">
-
-</div>
+<article *ngIf="isShowSort" class="section sorts-area">
+  <h3 class="sorts-area__title">{{titleSort}}</h3>
+  <div class="list-sorts">
+    <button class="list-sorts__item" *ngFor="let btn of itemsBtn">{{btn}}</button>
+    <form class="form-sorts">
+      <label class="form-sorts__label" for="matinPut">{{itemSearch}}</label>
+      <input matInput>
+    </form>
+  </div>
+</article>

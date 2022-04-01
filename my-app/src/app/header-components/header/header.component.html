@@ -3,9 +3,8 @@
     <div class="search-area">
       <img class="header__logo" src="/assets/logo-play.svg" alt="logo-play">
       <app-search-area></app-search-area>
-      <app-settings-button></app-settings-button>
+      <app-settings-button (clickChange)="onAClicked($event)"></app-settings-button>
     </div>
     <app-user-info></app-user-info>
-
   </div>
 </header>

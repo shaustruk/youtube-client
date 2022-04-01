@@ -3,12 +3,12 @@
   margin-left: auto;
 
   &__info {
-    align-self: center;
+    align-self: flex-end;
     margin-right: 0.5rem;
   }
 
-  &__icon-user {
-    height: 2rem;
-    width: 2rem;
+  .material-icons {
+    font-size: 40px;
+    color:#2e7de8;
   }
 }

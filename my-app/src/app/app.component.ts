@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss', '../SCSS/null.scss'],
 })
 export class AppComponent {
-
+  public isShow: boolean;
+  public onAClicked(isShow: boolean) {
+    console.log(isShow, 'app');
+    this.isShow = isShow;
+  }
 }
