@@ -51,7 +51,7 @@ export interface IItem {
 @Component({
   selector: 'app-search-item-model',
   templateUrl: './search-item-model.component.html',
-  styleUrls: ['./search-item-model.component.scss'],
+  styleUrls: [],
 })
 export class SearchItemModelComponent {
   constructor() {

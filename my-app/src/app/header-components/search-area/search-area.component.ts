@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search-area',
@@ -10,6 +10,8 @@ export class SearchAreaComponent implements OnInit {
 
   public btn = 'search';
 
+  public isVisibleCards: boolean = false;
+
   constructor() {
     console.log();
   }
@@ -17,4 +19,12 @@ export class SearchAreaComponent implements OnInit {
   ngOnInit(): void {
     console.log();
   }
+
+  showCards() {
+    this.isVisibleCards = !this.isVisibleCards;
+    console.log(this.isVisibleCards);
+    this.clickSearch.emit(this.isVisibleCards);
+  }
+  @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();
+
 }

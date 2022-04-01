@@ -1,0 +1,17 @@
+<div class="section section-cards">
+  <h2 *ngIf="!isShowCards" class="section-cards__title">{{title}}</h2>
+  <div *ngIf="isShowCards" class="cards-box">
+    <ul class="list-cards">
+      <li *ngFor="let card of listCards" class="card">
+        <div class="card__img">
+          <img src="{{card.snippet.thumbnails.medium.url}}" alt="image item">
+        </div>
+        <div class="card__content">
+          <div class="card__feedback">
+            <span class="card-feedback__view-count">{{card.statistics.commentCount}}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

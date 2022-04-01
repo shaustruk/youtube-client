@@ -1,0 +1,29 @@
+@import '../../SCSS/variable.scss';
+
+.section-cards{
+     padding: 1rem;
+    background: #ffffff;
+    border: 0.2rem solid #e5e5e5;
+
+    &__title{
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      color: $mainBlue;
+      font-size: 3rem;
+    }
+}
+.list-cards {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+padding: 1rem;
+background-color: #e5e5e5;
+border-radius: 0.8rem;
+}

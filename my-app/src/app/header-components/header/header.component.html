@@ -2,7 +2,7 @@
   <div class="header__info">
     <div class="search-area">
       <img class="header__logo" src="/assets/logo-play.svg" alt="logo-play">
-      <app-search-area></app-search-area>
+      <app-search-area (clickSearch)="onSearchClicked($event)"></app-search-area>
       <app-settings-button (clickChange)="onAClicked($event)"></app-settings-button>
     </div>
     <app-user-info></app-user-info>

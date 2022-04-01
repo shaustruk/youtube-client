@@ -15,6 +15,7 @@ import { SettingsButtonComponent } from './header-components/settings-button/set
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import { ListCardsComponent } from './list-cards/list-cards.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { FormsModule } from '@angular/forms';
     SearchItemComponent,
     SearchResultsComponent,
     SettingsButtonComponent,
+    ListCardsComponent,
   ],
   imports: [
     BrowserModule,

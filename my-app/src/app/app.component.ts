@@ -8,7 +8,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class AppComponent {
   public isShow: boolean;
   public onAClicked(isShow: boolean) {
-    console.log(isShow, 'app');
     this.isShow = isShow;
   }
+
+  public isShowCards: boolean;
+  public onClickSearch(isShowCards: boolean) {
+    console.log(isShowCards, 'isShowCards', 'app');
+    this.isShowCards = isShowCards;
+  }
+
+
 }

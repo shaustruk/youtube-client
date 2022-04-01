@@ -7,14 +7,19 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   public isShow: boolean;
-
-  @Output() clickChange: EventEmitter<boolean> = new EventEmitter();
+  public isShowCards: boolean;
 
   public onAClicked(isShow: boolean) {
     this.isShow = isShow;
-    console.log(isShow, 'header');
     this.clickChange.emit(isShow);
   }
+  @Output() clickChange: EventEmitter<boolean> = new EventEmitter();
 
+  public onSearchClicked(isShowCards: boolean) {
+    this.isShowCards = isShowCards;
+    console.log(isShowCards, 'showCrads in', 'header');
+    this.clickSearch.emit(isShowCards);
+  }
+  @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();
 
 }
