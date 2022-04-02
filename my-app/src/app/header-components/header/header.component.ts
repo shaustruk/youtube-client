@@ -17,7 +17,6 @@ export class HeaderComponent {
 
   public onSearchClicked(isShowCards: boolean) {
     this.isShowCards = isShowCards;
-    console.log(isShowCards, 'showCrads in', 'header');
     this.clickSearch.emit(isShowCards);
   }
   @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();

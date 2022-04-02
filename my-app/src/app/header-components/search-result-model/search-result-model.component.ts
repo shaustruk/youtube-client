@@ -14,18 +14,3 @@ export interface IItems {
     card: IItem[];
   }
 }
-
-@Component({
-  selector: 'app-search-result-model',
-  templateUrl: './search-result-model.component.html',
-  styleUrls: ['./search-result-model.component.scss'],
-})
-export class SearchResultModelComponent implements OnInit {
-  constructor() {
-    console.log();
-  }
-
-  ngOnInit(): void {
-    console.log();
-  }
-}

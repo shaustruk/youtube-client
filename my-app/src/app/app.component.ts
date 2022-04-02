@@ -13,7 +13,6 @@ export class AppComponent {
 
   public isShowCards: boolean;
   public onClickSearch(isShowCards: boolean) {
-    console.log(isShowCards, 'isShowCards', 'app');
     this.isShowCards = isShowCards;
   }
 

@@ -25,8 +25,8 @@ export interface ISnippet {
   description: string,
   thumbnails: IThumbnails,
   channelTitle: string,
-  tags: [index: string],
-  categoryId: number,
+  tags: string[],
+  categoryId: string,
   liveBroadcastContent: string,
   localized: Ilocalized
   defaultAudioLanguage: string
@@ -45,18 +45,6 @@ export interface IItem {
   etag: string,
   id: string,
   snippet: ISnippet,
-  statisticks: IStatistics,
+  statistics: IStatistics,
 }
 
-@Component({
-  selector: 'app-search-item-model',
-  templateUrl: './search-item-model.component.html',
-  styleUrls: [],
-})
-export class SearchItemModelComponent {
-  constructor() {
-    console.log();
-  }
-
-
-}

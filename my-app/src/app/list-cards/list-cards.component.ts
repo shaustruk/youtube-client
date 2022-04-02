@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { lessons } from '../mocks/cards-list.mock';
+import { IItem } from '../header-components/search-item-model/search-item-model.component';
+import { listCards, objStatistics, objURL } from '../mocks/cards-list.mock';
 
 @Component({
   selector: 'app-list-cards',
@@ -8,15 +9,14 @@ import { lessons } from '../mocks/cards-list.mock';
 })
 export class ListCardsComponent implements OnInit {
   public title = 'Hello. Push search for start';
-  listCards = lessons;
-
+  listObj: IItem[] = listCards;
+  objUrl = objURL;
+  objStatist = objStatistics;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.listCards);
-    this.listCards.map(el => {
-      console.log(el.statistics.commentCount);
-    });
-  }
+  };
   @Input() isShowCards: boolean;
 }
+
+
