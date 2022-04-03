@@ -10,9 +10,7 @@ export class FilterWordPipe implements PipeTransform {
     if (!searchWord.trim()) {
       return listObj;
     }
-    return listObj.filter(card => {
-      return card.snippet.title.toLocaleLowerCase().indexOf(searchWord.toLocaleLowerCase()) !== -1 //not found
-    });
+    return listObj.filter(card => card.snippet.title.toLocaleLowerCase().indexOf(searchWord.toLocaleLowerCase()) !== -1) //not found);
   }
 
 }

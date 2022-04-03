@@ -34,14 +34,13 @@ export class ListCardsComponent implements OnInit {
 
       console.log(this.isdateLessMonth, this.isdateLessSevenDays, this.isDateMoreSixMonth, this.datePulication, this.today)
     })
-
   }
+  @Input() isBtnDatePush: boolean;
+  @Input() isBtnViewPush: boolean;
 
   ngOnInit(): void {
-    console.log(this.wordTitle, 'list');
   };
 
 
 }
-console.log('list');
 

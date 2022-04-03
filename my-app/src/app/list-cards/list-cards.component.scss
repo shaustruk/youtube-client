@@ -28,7 +28,7 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-  width: 30rem;
+  width: 32rem;
   background-color: #e5e5e5;
   border-radius: 0.8rem;
 
@@ -63,10 +63,11 @@
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-bottom: 5rem;
+  flex: 1 1 auto;
+  margin-bottom: 3rem;
   color: #4F4F4F;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 23px;
 }
 

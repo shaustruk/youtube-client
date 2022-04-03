@@ -2,7 +2,7 @@
   <h2 *ngIf="!isShowCards" class="section-cards__title">{{title}}</h2>
   <div *ngIf="isShowCards" class="cards-box">
     <div class="list-cards">
-      <div *ngFor="let info of listObj | filterWord:wordTitle" class="card">
+      <div *ngFor="let info of listObj | filterWord:wordTitle | filterViews:isBtnViewPush" class="card">
         <div class="card__img">
           <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
         </div>
@@ -38,7 +38,7 @@
           {{info.snippet.localized.title}}
         </div>
         <button mat-flat-button>more...</button>
-        <div appBottom class="card__bottom"> {{(info.snippet.publishedAt)}}</div>
+        <div appBottom class="card__bottom"> {{(info.snippet.publishedAt) |date}}</div>
       </div>
     </div>
   </div>

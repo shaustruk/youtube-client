@@ -23,4 +23,16 @@ export class AppComponent {
 
   }
 
+  public isBtnViewPush: boolean;
+  public sortView(isBtnViewPush: boolean) {
+    this.isBtnViewPush = isBtnViewPush;
+    console.log(isBtnViewPush, 'app - viewSort')
+  }
+
+  public isBtnDatePush: boolean;
+  public sortDate(isBtnDatePush: boolean) {
+    this.isBtnDatePush = isBtnDatePush;
+    console.log(isBtnDatePush, 'app - dateSort')
+
+  }
 }
