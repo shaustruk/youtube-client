@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sorts-search-area',
@@ -10,6 +10,14 @@ export class SortsSearchAreaComponent {
   public titleSort = 'Sorting by:';
   public itemsBtn = ['date', 'count of views'];
   public itemSearch = 'by word or sentance';
+
+  public searchTitle: string = '';
+  onInputSearchTitle(event: Event) {
+    this.searchTitle = (<HTMLInputElement>event.target).value;
+    this.addSearchInputWord.emit(this.searchTitle);
+    console.log(this.searchTitle, 'title - sorts');
+  }
+  @Output() addSearchInputWord: EventEmitter<string> = new EventEmitter();
 
 
 }

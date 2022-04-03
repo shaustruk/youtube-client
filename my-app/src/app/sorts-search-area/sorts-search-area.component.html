@@ -4,7 +4,7 @@
     <button class="list-sorts__item" *ngFor="let btn of itemsBtn">{{btn}}</button>
     <form class="form-sorts">
       <label class="form-sorts__label" for="matinPut">{{itemSearch}}</label>
-      <input matInput>
+      <input type="text" (keyup)="onInputSearchTitle($event)">
     </form>
   </div>
 </article>

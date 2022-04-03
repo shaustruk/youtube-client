@@ -14,6 +14,9 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ListCardsComponent } from './list-cards/list-cards.component';
+import { FilterWordPipe } from './filters/filter-word.pipe';
+import { FilterViewsPipe } from './filters/filter-views.pipe';
+import { FilterDatesPipe } from './filters/filter-dates.pipe';
 
 
 @NgModule({
@@ -28,6 +31,9 @@ import { ListCardsComponent } from './list-cards/list-cards.component';
     SearchResultsComponent,
     SettingsButtonComponent,
     ListCardsComponent,
+    FilterWordPipe,
+    FilterViewsPipe,
+    FilterDatesPipe,
   ],
   imports: [
     BrowserModule,

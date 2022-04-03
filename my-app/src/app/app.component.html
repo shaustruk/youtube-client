@@ -1,3 +1,3 @@
 <app-header (clickChange)="onAClicked($event)" (clickSearch)="onClickSearch($event)"></app-header>
-<app-sorts-search-area [isShowSort]="isShow"></app-sorts-search-area>
-<app-list-cards [isShowCards]="isShowCards"></app-list-cards>
+<app-sorts-search-area [isShowSort]="isShow" (addSearchInputWord)="searchWord($event)"></app-sorts-search-area>
+<app-list-cards [isShowCards]="isShowCards" [wordTitle]="wordTitle"></app-list-cards>

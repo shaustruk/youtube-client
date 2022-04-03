@@ -3,14 +3,11 @@ import { IIMg, IItem, IStatistics, IThumbnails } from '../header-components/sear
 import { IItems } from '../header-components/search-result-model/search-result-model.component';
 
 const data = response;
-const items: IItem[] = data.items;
-export const listCards: IItem[] = [];
-
-
+export const items: IItem[] = [...data.items];
 export const objURL: Array<IThumbnails> = [];
 export const objStatistics: Array<IStatistics> = [];
+
 items.forEach(el => {
-  listCards.push(el);
   objURL.push(el.snippet.thumbnails);
   objStatistics.push(el.statistics);
 })

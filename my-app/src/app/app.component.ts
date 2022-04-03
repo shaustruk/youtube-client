@@ -16,5 +16,11 @@ export class AppComponent {
     this.isShowCards = isShowCards;
   }
 
+  public wordTitle: string;
+  public searchWord(wordTitle: string) {
+    this.wordTitle = wordTitle;
+    console.log(wordTitle, 'app - title')
+
+  }
 
 }

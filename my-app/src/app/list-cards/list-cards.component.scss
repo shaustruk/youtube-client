@@ -1,7 +1,7 @@
 @import '../../SCSS/variable.scss';
 
 .section-cards{
-     padding: 1rem;
+    padding: 1.5rem;
     background: #ffffff;
     border: 0.2rem solid #e5e5e5;
 
@@ -16,6 +16,7 @@
 .list-cards {
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -23,7 +24,59 @@
 }
 
 .card {
-padding: 1rem;
-background-color: #e5e5e5;
-border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 30rem;
+  background-color: #e5e5e5;
+  border-radius: 0.8rem;
+
+  &__img {
+    margin-bottom: 2rem;
+  }
+
+  &__view-count,
+  &__like,
+  &__dislike,
+  &__comment {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
 }
+
+
+.card__content {
+  .card__statistics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+}
+}
+
+.card__title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 5rem;
+  color: #4F4F4F;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.mat-flat-button {
+  width: 120px;
+  padding: 1rem 3rem;
+  background-color: $mainBlue;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+
