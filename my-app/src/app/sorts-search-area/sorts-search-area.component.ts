@@ -25,8 +25,7 @@ export class SortsSearchAreaComponent {
   public isBtnDatePush: boolean = false;
   clickOnDateSortBtn() {
     this.isBtnDatePush = !this.isBtnDatePush;
-    console.log(this.isBtnDatePush);
-    this.datePush.emit(this.isBtnViewPush);
+    this.datePush.emit(this.isBtnDatePush);
   }
   @Output() datePush:
     EventEmitter<boolean> = new EventEmitter();
@@ -35,7 +34,6 @@ export class SortsSearchAreaComponent {
   public isBtnViewPush: boolean = false;
   clickOnViewSortBtn() {
     this.isBtnViewPush = !this.isBtnViewPush;
-    console.log(this.isBtnViewPush);
     this.viewPush.emit(this.isBtnViewPush);
   }
   @Output() viewPush:

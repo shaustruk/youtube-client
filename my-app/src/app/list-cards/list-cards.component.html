@@ -2,43 +2,48 @@
   <h2 *ngIf="!isShowCards" class="section-cards__title">{{title}}</h2>
   <div *ngIf="isShowCards" class="cards-box">
     <div class="list-cards">
-      <div *ngFor="let info of listObj | filterWord:wordTitle | filterViews:isBtnViewPush" class="card">
-        <div class="card__img">
-          <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
-        </div>
-        <div class="card__content">
-          <div class="card__statistics">
-            <div class="card__view-count">
-              <span class="material-icons">
-                visibility
-              </span>
-              <span>{{info.statistics.viewCount}}</span>
-            </div>
-            <div class="card__like">
-              <span class="material-icons">
-                thumb_up
-              </span>
-              <span>{{info.statistics.likeCount}}</span>
-            </div>
-            <div class="card__dislike">
-              <span class="material-icons">
-                thumb_down
-              </span>
-              <span>{{info.statistics.dislikeCount}}</span>
-            </div>
-            <div class="card__comment">
-              <span class="material-icons">
-                question_answer
-              </span>
-              <span>{{info.statistics.commentCount}}</span>
+      <div *ngFor="let info of listObj |
+       filterWord:wordTitle |
+        filterViews:isBtnViewPush |
+          filterDates:isBtnDatePush" class="card">
+        <div class="card-container">
+          <div class="card__img">
+            <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
+          </div>
+          <div class="card__content">
+            <div class="card__statistics">
+              <div class="card__view-count">
+                <span class="material-icons">
+                  visibility
+                </span>
+                <span>{{info.statistics.viewCount}}</span>
+              </div>
+              <div class="card__like">
+                <span class="material-icons">
+                  thumb_up
+                </span>
+                <span>{{info.statistics.likeCount}}</span>
+              </div>
+              <div class="card__dislike">
+                <span class="material-icons">
+                  thumb_down
+                </span>
+                <span>{{info.statistics.dislikeCount}}</span>
+              </div>
+              <div class="card__comment">
+                <span class="material-icons">
+                  question_answer
+                </span>
+                <span>{{info.statistics.commentCount}}</span>
+              </div>
             </div>
           </div>
+          <div class="card__title">
+            {{info.snippet.localized.title}}
+          </div>
+          <button mat-flat-button>more...</button>
+          <div appBottom class="card__bottom"> {{info.snippet.publishedAt | date }}</div>
         </div>
-        <div class="card__title">
-          {{info.snippet.localized.title}}
-        </div>
-        <button mat-flat-button>more...</button>
-        <div appBottom class="card__bottom"> {{(info.snippet.publishedAt) |date}}</div>
       </div>
     </div>
   </div>

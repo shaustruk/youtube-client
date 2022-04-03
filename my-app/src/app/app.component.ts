@@ -19,14 +19,11 @@ export class AppComponent {
   public wordTitle: string;
   public searchWord(wordTitle: string) {
     this.wordTitle = wordTitle;
-    console.log(wordTitle, 'app - title')
-
   }
 
   public isBtnViewPush: boolean;
   public sortView(isBtnViewPush: boolean) {
     this.isBtnViewPush = isBtnViewPush;
-    console.log(isBtnViewPush, 'app - viewSort')
   }
 
   public isBtnDatePush: boolean;
