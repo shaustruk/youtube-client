@@ -42,6 +42,14 @@
     gap: 3px;
   }
 
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #4F4F4F;
+    border-radius: 0.5rem;
+  }
+
 }
 
 .card-container {
@@ -49,7 +57,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 1rem;
+  padding: 1rem 0.5rem 0 0.5rem;
   background-color: #e5e5e5;
   border-radius: 0.8rem;
 }
@@ -80,6 +88,7 @@
 .mat-flat-button {
   width: 120px;
   padding: 1rem 3rem;
+  margin-bottom: 1rem;
   background-color: $mainBlue;
   font-weight: 400;
   font-size: 12px;

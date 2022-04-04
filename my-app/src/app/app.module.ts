@@ -17,6 +17,7 @@ import { ListCardsComponent } from './list-cards/list-cards.component';
 import { FilterWordPipe } from './filters/filter-word.pipe';
 import { FilterViewsPipe } from './filters/filter-views.pipe';
 import { FilterDatesPipe } from './filters/filter-dates.pipe';
+import { BottomColorDirective } from './directives/bottom-color.directive';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { FilterDatesPipe } from './filters/filter-dates.pipe';
     FilterWordPipe,
     FilterViewsPipe,
     FilterDatesPipe,
+    BottomColorDirective,
   ],
   imports: [
     BrowserModule,

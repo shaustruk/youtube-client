@@ -42,7 +42,9 @@
             {{info.snippet.localized.title}}
           </div>
           <button mat-flat-button>more...</button>
-          <div appBottom class="card__bottom"> {{info.snippet.publishedAt | date }}</div>
+          <div [appBottomColor]='info.snippet.publishedAt' class="card__bottom">
+            {{info.snippet.publishedAt | date}}
+          </div>
         </div>
       </div>
     </div>

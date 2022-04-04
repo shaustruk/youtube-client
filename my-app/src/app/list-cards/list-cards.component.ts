@@ -12,28 +12,13 @@ export class ListCardsComponent implements OnInit {
 
   public listObj: IItem[] = items;
 
-  public datePulication: number;
 
-  public today: number = Date.now();
-  public oneMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000;
-  public sixMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000 * 6;
-  public sevenDaysMilisec: number = 7 * 24 * 60 * 60 * 1000;
-  public isdateLessMonth: boolean = true;
-  public isdateLessSevenDays: boolean = true;
-  public isDateMoreSixMonth: boolean = true;
   // objUrl = objURL;
   // objStatist = objStatistics;
   @Input() isShowCards: boolean;
   @Input() wordTitle: string;
   constructor() {
-    this.listObj.forEach(el => {
-      this.datePulication = Date.parse(el.snippet.publishedAt);
-      this.isdateLessSevenDays = (this.today - this.datePulication) <= this.sevenDaysMilisec;
-      this.isdateLessMonth = (this.today - this.datePulication) <= this.oneMonthMiliSec;
-      this.isDateMoreSixMonth = (this.today - this.datePulication) >= this.sixMonthMiliSec;
 
-      console.log(this.isdateLessMonth, this.isdateLessSevenDays, this.isDateMoreSixMonth, this.datePulication, this.today)
-    })
   }
   @Input() isBtnDatePush: boolean;
   @Input() isBtnViewPush: boolean;

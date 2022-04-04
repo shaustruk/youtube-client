@@ -22,7 +22,6 @@ export class SearchAreaComponent implements OnInit {
 
   showCards() {
     this.isVisibleCards = !this.isVisibleCards;
-    console.log(this.isVisibleCards);
     this.clickSearch.emit(this.isVisibleCards);
   }
   @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();

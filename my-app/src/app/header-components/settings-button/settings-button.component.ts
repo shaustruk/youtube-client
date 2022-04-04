@@ -9,7 +9,6 @@ export class SettingsButtonComponent {
   public isShowBoxSorts: boolean = false;
   @Output() clickChange: EventEmitter<boolean> = new EventEmitter();
   public clickMe() {
-    console.log(this.isShowBoxSorts);
     this.isShowBoxSorts = !this.isShowBoxSorts;
     this.clickChange.emit(this.isShowBoxSorts);
   }
