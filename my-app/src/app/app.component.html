@@ -1,0 +1,6 @@
+<app-header (clickSetting)="onSettingClicked($event)" (clickSearch)="onClickSearch($event)"></app-header>
+<app-sorts-search-area [isShowSort]="isShow" (addSearchInputWord)="searchWord($event)" (datePush)="sortDate($event)"
+  (viewPush)="sortView($event)">
+</app-sorts-search-area>
+<app-list-cards [isShowCards]="isShowCards" [wordTitle]="wordTitle" [isBtnDatePush]="isBtnDatePush"
+  [isBtnViewPush]="isBtnViewPush"></app-list-cards>
