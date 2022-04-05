@@ -6,9 +6,10 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./search-area.component.scss'],
 })
 export class SearchAreaComponent implements OnInit {
-  public search = 'What are you want to find out?';
-
-  public btn = 'search';
+  public searchAreaLabels = {
+    searchPlaceholder: 'What are you want to find out?',
+    searchBtn: 'search'
+  };
 
   public isVisibleCards: boolean = false;
 

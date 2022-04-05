@@ -6,11 +6,11 @@ import { IItem } from '../header-components/search-item-model/search-item-model.
 })
 export class FilterWordPipe implements PipeTransform {
 
-  transform(listObj: IItem[], searchWord: string = ''): IItem[] {
+  transform(listCards: IItem[], searchWord: string = ''): IItem[] {
     if (!searchWord.trim()) {
-      return listObj;
+      return listCards;
     }
-    return listObj.filter(card => card.snippet.title.toLocaleLowerCase().indexOf(searchWord.toLocaleLowerCase()) !== -1) //not found);
+    return listCards.filter(card => card.snippet.title.toLocaleLowerCase().indexOf(searchWord.toLocaleLowerCase()) !== -1) //not found);
   }
 
 }

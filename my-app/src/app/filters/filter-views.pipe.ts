@@ -6,12 +6,12 @@ import { IItem } from '../header-components/search-item-model/search-item-model.
 })
 export class FilterViewsPipe implements PipeTransform {
 
-  transform(listObj: IItem[], isBtnViewPush: boolean): IItem[] {
+  transform(listCards: IItem[], isBtnViewPush: boolean): IItem[] {
     if (!isBtnViewPush) {
-      return listObj.sort(function (a, b) { return (Number(b.statistics.viewCount) - Number(a.statistics.viewCount)) });
+      return listCards.sort(function (a, b) { return (Number(b.statistics.viewCount) - Number(a.statistics.viewCount)) });
 
     }
-    return listObj.sort(function (a, b) { return (Number(a.statistics.viewCount) - Number(b.statistics.viewCount)) });
+    return listCards.sort(function (a, b) { return (Number(a.statistics.viewCount) - Number(b.statistics.viewCount)) });
 
   };
 

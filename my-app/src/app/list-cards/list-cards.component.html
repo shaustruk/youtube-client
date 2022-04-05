@@ -2,7 +2,7 @@
   <h2 *ngIf="!isShowCards" class="section-cards__title">{{title}}</h2>
   <div *ngIf="isShowCards" class="cards-box">
     <div class="list-cards">
-      <div *ngFor="let info of listObj |
+      <div *ngFor="let info of listCards |
        filterWord:wordTitle |
         filterViews:isBtnViewPush |
           filterDates:isBtnDatePush" class="card">

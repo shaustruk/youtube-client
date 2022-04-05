@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class AppComponent {
   public isShow: boolean;
-  public onAClicked(isShow: boolean) {
+  public onSettingClicked(isShow: boolean) {
     this.isShow = isShow;
   }
 

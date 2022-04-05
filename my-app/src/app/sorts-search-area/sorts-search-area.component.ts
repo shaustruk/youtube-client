@@ -7,13 +7,16 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class SortsSearchAreaComponent {
   @Input() isShowSort: boolean;
-  public titleSort = 'Sorting by:';
-  public itemsBtn = ['date', 'count of views'];
-  public itemSearch = 'by word or sentance';
+  public sortesTitle = {
+    titleSort: 'Sorting by:',
+    itemsBtn: ['date', 'count of views'],
+    itemSearch: 'by word or sentance',
+  }
+
 
   /*--------filterTitle------------*/
   public searchTitle: string = '';
-  onInputSearchTitle(event: Event) {
+  onSearchCard(event: Event) {
     this.searchTitle = (<HTMLInputElement>event.target).value;
     this.addSearchInputWord.emit(this.searchTitle);
     console.log(this.searchTitle, 'title - sorts');
@@ -23,7 +26,7 @@ export class SortsSearchAreaComponent {
 
   /*--------sortDate------------*/
   public isBtnDatePush: boolean = false;
-  clickOnDateSortBtn() {
+  onDateSortBtn() {
     this.isBtnDatePush = !this.isBtnDatePush;
     this.datePush.emit(this.isBtnDatePush);
   }
@@ -32,7 +35,7 @@ export class SortsSearchAreaComponent {
 
   /*--------sortView------------*/
   public isBtnViewPush: boolean = false;
-  clickOnViewSortBtn() {
+  onViewSortBtn() {
     this.isBtnViewPush = !this.isBtnViewPush;
     this.viewPush.emit(this.isBtnViewPush);
   }

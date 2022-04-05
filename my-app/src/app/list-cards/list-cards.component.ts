@@ -8,23 +8,18 @@ import { items, objStatistics, objURL } from '../mocks/cards-list.mock';
   styleUrls: ['./list-cards.component.scss']
 })
 export class ListCardsComponent implements OnInit {
+  public listCards: IItem[] = items;
+
   public title = 'Hello. Push search for start';
 
-  public listObj: IItem[] = items;
-
-
-  // objUrl = objURL;
-  // objStatist = objStatistics;
   @Input() isShowCards: boolean;
   @Input() wordTitle: string;
-  constructor() {
-
-  }
   @Input() isBtnDatePush: boolean;
   @Input() isBtnViewPush: boolean;
 
-  ngOnInit(): void {
-  };
+  constructor() { }
+
+  ngOnInit(): void { };
 
 
 }

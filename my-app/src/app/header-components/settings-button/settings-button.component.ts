@@ -6,11 +6,12 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
   styleUrls: ['./settings-button.component.scss']
 })
 export class SettingsButtonComponent {
-  public isShowBoxSorts: boolean = false;
-  @Output() clickChange: EventEmitter<boolean> = new EventEmitter();
-  public clickMe() {
+  private isShowBoxSorts: boolean = false;
+
+  @Output() clickSetting: EventEmitter<boolean> = new EventEmitter();
+  public clickSettingBtn() {
     this.isShowBoxSorts = !this.isShowBoxSorts;
-    this.clickChange.emit(this.isShowBoxSorts);
+    this.clickSetting.emit(this.isShowBoxSorts);
   }
 
 }

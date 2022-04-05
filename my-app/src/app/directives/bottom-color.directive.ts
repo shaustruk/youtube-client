@@ -5,30 +5,31 @@ import { items } from '../mocks/cards-list.mock';
   selector: '[appBottomColor]'
 })
 export class BottomColorDirective implements OnInit {
-  public obj = items;
-  public datePublication: number;
-
-  public today: number = Date.now();
-  public oneMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000;
-  public sixMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000 * 6;
-  public sevenDaysMilisec: number = 7 * 24 * 60 * 60 * 1000;
-  public isdateLessMonth: boolean = false;
-  public isdateMoreMonth: boolean = false;
-  public isdateLessSevenDays: boolean = false;
-  public isDateMoreSixMonth: boolean = false;
+  private datePublication: number;
+  private today: number = Date.now();
+  private oneMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000;
+  private sixMonthMiliSec: number = 30 * 24 * 60 * 60 * 1000 * 6;
+  private sevenDaysMilisec: number = 7 * 24 * 60 * 60 * 1000;
+  private isdateLessMonth: boolean = false;
+  private isdateMoreMonth: boolean = false;
+  private isdateLessSevenDays: boolean = false;
+  private isDateMoreSixMonth: boolean = false;
+  private timeFromDatepublicated: number;
 
   @Input('appBottomColor') dateAdd: string;
+
 
   constructor(private dateTag: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
 
     this.datePublication = Date.parse(this.dateAdd);
-    console.log(this.dateAdd)
-    this.isdateLessSevenDays = (this.today - this.datePublication) <= this.sevenDaysMilisec;
-    this.isdateLessMonth = (this.today - this.datePublication) <= this.oneMonthMiliSec;
-    this.isdateMoreMonth = (this.today - this.datePublication) >= this.oneMonthMiliSec;
-    this.isDateMoreSixMonth = (this.today - this.datePublication) >= this.sixMonthMiliSec;
+    this.timeFromDatepublicated = (this.today - this.datePublication);
+
+    this.isdateLessSevenDays = this.timeFromDatepublicated <= this.sevenDaysMilisec;
+    this.isdateLessMonth = this.timeFromDatepublicated <= this.oneMonthMiliSec;
+    this.isdateMoreMonth = this.timeFromDatepublicated >= this.oneMonthMiliSec;
+    this.isDateMoreSixMonth = this.timeFromDatepublicated >= this.sixMonthMiliSec;
 
     const { nativeElement } = this.dateTag;
     if (this.isdateLessSevenDays) {
