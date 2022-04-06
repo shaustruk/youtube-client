@@ -2,40 +2,38 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header-components/header/header.component';
-import { MainPageComponent } from './main-page/main-page.component';
-import { SearchAreaComponent } from './header-components/search-area/search-area.component';
-import { UserInfoComponent } from './header-components/user-info/user-info.component';
-import { SortsSearchAreaComponent } from './sorts-search-area/sorts-search-area.component';
-import { SearchItemComponent } from './header-components/search-item/search-item.component';
-import { SearchResultsComponent } from './header-components/search-results/search-results.component';
-import { SettingsButtonComponent } from './header-components/settings-button/settings-button.component';
+import { SearchAreaComponent } from './core/header/search-area/search-area.component';
+import { UserInfoComponent } from './core/header/user-info/user-info.component';
+import { SortsSearchAreaComponent } from './youtube/main-page/sorts-search-area/sorts-search-area.component';
+import { SettingsButtonComponent } from './core/header/settings-button/settings-button.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { ListCardsComponent } from './list-cards/list-cards.component';
-import { FilterWordPipe } from './filters/filter-word.pipe';
-import { FilterViewsPipe } from './filters/filter-views.pipe';
-import { FilterDatesPipe } from './filters/filter-dates.pipe';
-import { BottomColorDirective } from './directives/bottom-color.directive';
+import { ListCardsComponent } from './youtube/main-page/list-cards/list-cards.component';
+import { FilterWordPipe } from './youtube/pipes/filter-word.pipe';
+import { FilterViewsPipe } from './youtube/pipes/filter-views.pipe';
+import { FilterDatesPipe } from './youtube/pipes/filter-dates.pipe';
+import { BottomColorDirective } from './youtube/directives/bottom-color.directive';
+import { FooterComponent } from './core/footer/footer.component';
+import { HeaderComponent } from './core/header/header.component';
+import { MainPageComponent } from './youtube/main-page/main-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
     HeaderComponent,
-    MainPageComponent,
+    AppComponent,
     SearchAreaComponent,
     UserInfoComponent,
     SortsSearchAreaComponent,
-    SearchItemComponent,
-    SearchResultsComponent,
     SettingsButtonComponent,
     ListCardsComponent,
     FilterWordPipe,
     FilterViewsPipe,
     FilterDatesPipe,
     BottomColorDirective,
+    FooterComponent,
+    MainPageComponent,
   ],
   imports: [
     BrowserModule,
