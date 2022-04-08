@@ -1,0 +1,51 @@
+@import '../../SCSS/variable.scss';
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  height: 84vh;
+}
+.wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 18rem;
+  width: 25rem;
+  padding: 2rem;
+  background-color: #F2F2F2;
+
+  &__title {
+    align-self: start;
+  }
+
+  &__input {
+    margin-bottom: 1rem;
+    height: 2.5rem;
+  }
+
+  &__name,
+  &__password {
+    display: flex;
+    flex-direction: column;
+    color: #828282;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  &__btn {
+    align-self: end;
+    width: 6rem;
+    background-color: $mainBlue;
+  }
+}
+
+

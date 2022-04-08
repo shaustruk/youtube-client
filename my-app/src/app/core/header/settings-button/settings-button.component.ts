@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { ShowCardService } from '../services/show-card.service';
 
 @Component({
   selector: 'app-settings-button',
@@ -8,10 +9,16 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 export class SettingsButtonComponent {
   private isShowBoxSorts: boolean = false;
 
-  @Output() clickSetting: EventEmitter<boolean> = new EventEmitter();
-  public clickSettingBtn() {
-    this.isShowBoxSorts = !this.isShowBoxSorts;
-    this.clickSetting.emit(this.isShowBoxSorts);
+
+  public clickSettingBtn(value: unknown) {
+    this.isShowBoxSorts = value as boolean ? !this.isShowBoxSorts : value as boolean;
+    // this.isShowBoxSorts = !this.isShowBoxSorts;
+    this.service.showFiltres(this.isShowBoxSorts);
+  }
+
+
+  constructor(private service: ShowCardService) {
+
   }
 
 }

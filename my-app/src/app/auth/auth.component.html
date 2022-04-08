@@ -1,1 +1,16 @@
-<p>auth works!</p>
+<div class="auth-page section">
+  <div class="wrapper">
+    <div class="auth-form">
+      <h2 class="auth-form__title">{{authData.title}}</h2>
+      <div class="auth-form__name">
+        <label for="name">{{authData.login}}</label>
+        <input class="auth-form__input" id="name" type="text">
+      </div>
+      <div class="auth-form__password">
+        <label for="password">{{authData.password}}</label>
+        <input class="auth-form__input" id="password" type="password">
+      </div>
+      <button class="auth-form__btn" mat-raised-button color="primary">{{authData.title}}</button>
+    </div>
+  </div>
+</div>

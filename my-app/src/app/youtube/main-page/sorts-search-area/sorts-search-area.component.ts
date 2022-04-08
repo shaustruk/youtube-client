@@ -19,7 +19,6 @@ export class SortsSearchAreaComponent {
   onSearchCard(event: Event) {
     this.searchTitle = (<HTMLInputElement>event.target).value;
     this.addSearchInputWord.emit(this.searchTitle);
-    console.log(this.searchTitle, 'title - sorts');
   }
   @Output() addSearchInputWord:
     EventEmitter<string> = new EventEmitter();

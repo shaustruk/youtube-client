@@ -1,26 +1,29 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { ShowCardService } from '../services/show-card.service';
 
 @Component({
   selector: 'app-search-area',
   templateUrl: './search-area.component.html',
   styleUrls: ['./search-area.component.scss'],
 })
-export class SearchAreaComponent implements OnInit {
+export class SearchAreaComponent {
+
   public searchAreaLabels = {
     searchPlaceholder: 'What are you want to find out?',
     searchBtn: 'search'
   };
+  private isClickSearch: boolean = false;
 
-  public isVisibleCards: boolean = false;
-
-  constructor() { }
-
-  ngOnInit(): void { }
-
-  showCards() {
-    this.isVisibleCards = !this.isVisibleCards;
-    this.clickSearch.emit(this.isVisibleCards);
+  // @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();
+  constructor(private serviceSearch: ShowCardService) { }
+  showCard(event: unknown): void {
+    this.isClickSearch = event as boolean;
+    this.serviceSearch.showCards(this.isClickSearch);
   }
-  @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();
 
 }
+
+
+
+
+

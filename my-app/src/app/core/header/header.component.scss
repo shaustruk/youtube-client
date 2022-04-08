@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  height: 10vh;
   background: #e5e5e5;
 
   &__logo {
@@ -24,7 +25,8 @@
 
   .search-area {
     display: flex;
-    height: 80px;
+    height: 100%;
+    padding: 0.5rem;
 
   }
 }

@@ -1,31 +1,55 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ShowCardService } from 'src/app/core/header/services/show-card.service';
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  styleUrls: ['./main-page.component.scss'],
 })
-export class MainPageComponent implements OnInit {
-  public isShowCards: boolean;
+export class MainPageComponent {
 
-  public onSearchClicked(isShowCards: boolean) {
-    this.isShowCards = isShowCards;
+  public searchWord: string = '';
+  public isSortDate: boolean;
+  public isSortViews: boolean;
+  // private _isShowCards: boolean = false;
+  public isShowCards: boolean = false;
+  public isShowFilters: boolean = false;
+  public searchInputWord(searchWord: string) {
+    this.searchWord = searchWord;
   }
 
-  // @Input() isShowCards: boolean;
-  // public isSortsWord: string;
-  // public searchWord(isSortsWord: string) {
-  //   this.isSortsWord = isSortsWord;
-  // }
-
-  // public isSortDate: boolean;
-  // public sortDate(isSortDate: boolean) {
-  //   this.isSortDate = isSortDate;
-  // }
-
-  constructor() { }
-
-  ngOnInit(): void {
+  public onDatePush(isSortDate: boolean) {
+    this.isSortDate = isSortDate;
   }
+
+  public onViewPush(isSortViews: boolean) {
+    this.isSortViews = isSortViews;
+  }
+
+  // public get isShowCards() {
+  //   return this._isShowCards;
+  // }
+  constructor(private serviceSearch: ShowCardService) {
+    this.serviceSearch.clickSearch$.subscribe(value => {
+      this.isShowCards = value
+    });
+    this.serviceSearch.clickSetting$.subscribe(value => {
+      this.isShowFilters = value;
+    })
+  }
+
+
+  ngOnOnit(): void {
+
+
+  }
+
 
 }
+
+
+
+
+
+
+
