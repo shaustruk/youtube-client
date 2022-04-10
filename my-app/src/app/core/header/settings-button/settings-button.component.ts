@@ -1,5 +1,6 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import { ShowCardService } from '../services/show-card.service';
+import { ShowCardService } from '../../services/show-card.service';
+
 
 @Component({
   selector: 'app-settings-button',

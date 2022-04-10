@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ShowCardService } from './services/show-card.service';
+
 
 @Component({
   selector: 'app-header',

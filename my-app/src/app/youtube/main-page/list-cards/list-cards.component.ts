@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IItem } from '../../models/search-item-model.component';
 import { items } from '../../../mocks/cards-list.mock';
-import { ShowCardService } from 'src/app/core/header/services/show-card.service';
+import { ShowCardService } from 'src/app/core/services/show-card.service';
 
 @Component({
   selector: 'app-list-cards',

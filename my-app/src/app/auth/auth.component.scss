@@ -28,8 +28,11 @@
   }
 
   &__input {
+    padding: 0.5rem;
     margin-bottom: 1rem;
     height: 2.5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid #828282a3;
   }
 
   &__name,
@@ -44,8 +47,17 @@
   &__btn {
     align-self: end;
     width: 6rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
     background-color: $mainBlue;
+    color: aliceblue;
+
   }
+
+}
+
+.auth-form__btn:disabled{
+  background-color:  #2e7de870;
 }
 
 

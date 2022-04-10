@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detailed-page.component.scss']
 })
 export class DetailedPageComponent implements OnInit {
-
+  public id: number;
   constructor() { }
 
   ngOnInit(): void {

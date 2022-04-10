@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { ShowCardService } from '../services/show-card.service';
+import { ShowCardService } from '../../services/show-card.service';
+
 
 @Component({
   selector: 'app-search-area',

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ShowCardService } from 'src/app/core/header/services/show-card.service';
+import { ShowCardService } from 'src/app/core/services/show-card.service';
+
 
 @Component({
   selector: 'app-main-page',

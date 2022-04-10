@@ -1,16 +1,20 @@
 <div class="auth-page section">
   <div class="wrapper">
-    <div class="auth-form">
-      <h2 class="auth-form__title">{{authData.title}}</h2>
-      <div class="auth-form__name">
-        <label for="name">{{authData.login}}</label>
-        <input class="auth-form__input" id="name" type="text">
-      </div>
-      <div class="auth-form__password">
-        <label for="password">{{authData.password}}</label>
-        <input class="auth-form__input" id="password" type="password">
-      </div>
-      <button class="auth-form__btn" mat-raised-button color="primary">{{authData.title}}</button>
+    <div class="content">
+      <form class='auth-form' #myForm="ngForm" novalidate (ngSubmit)="submitLogin(myForm)">
+        <div class="auth-form__name">
+          <h2 class="auth-form__title">{{authData.title}}</h2>
+          <label for="name">{{authData.login}}</label>
+          <input class="auth-form__input" required="" [(ngModel)]="user.login" name="name" id="name" type="text">
+        </div>
+        <div class="auth-form__password">
+          <label for="password">{{authData.password}}</label>
+          <input class="auth-form__input" required="" [(ngModel)]="user.password" name="password" id="password"
+            type="password">
+        </div>
+        <button class="auth-form__btn" (click)="goToApp()" type="submit"
+          [disabled]="!myForm.valid">{{authData.title}}</button>
+      </form>
     </div>
   </div>
 </div>
