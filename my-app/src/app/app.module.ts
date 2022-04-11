@@ -17,9 +17,9 @@ import { BottomColorDirective } from './youtube/directives/bottom-color.directiv
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
 import { MainPageComponent } from './youtube/main-page/main-page.component';
-import { AuthComponent } from './auth/auth.component';
 import { ErrorPageComponent } from './youtube/error-page/error-page.component';
 import { DetailedPageComponent } from './youtube/detailed-page/detailed-page.component';
+import { AuthModuleModule } from './auth/auth-module/auth-module.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { DetailedPageComponent } from './youtube/detailed-page/detailed-page.com
     BottomColorDirective,
     FooterComponent,
     MainPageComponent,
-    AuthComponent,
     ErrorPageComponent,
     DetailedPageComponent,
   ],
@@ -45,7 +44,7 @@ import { DetailedPageComponent } from './youtube/detailed-page/detailed-page.com
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
-    FormsModule,
+    AuthModuleModule
   ],
   bootstrap: [AppComponent],
 })
