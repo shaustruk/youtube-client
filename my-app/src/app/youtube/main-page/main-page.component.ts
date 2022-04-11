@@ -33,7 +33,6 @@ export class MainPageComponent {
   constructor(private serviceSearch: ShowCardService) {
     this.serviceSearch.clickSearch$.subscribe(value => {
       this.isShowCards = value;
-      console.log(this.isShowCards);
     });
 
     this.serviceSearch.clickSetting$.subscribe(value => {

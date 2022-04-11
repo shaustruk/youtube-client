@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { UserInfoComponent } from '../header/user-info/user-info.component';
 import { SearchAreaComponent } from '../header/search-area/search-area.component';
 import { SettingsButtonComponent } from '../header/settings-button/settings-button.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,14 @@ import { SettingsButtonComponent } from '../header/settings-button/settings-butt
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
 
   ],
   exports: [
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+
   ]
 })
 export class CoreModuleModule { }

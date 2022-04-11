@@ -10,10 +10,13 @@ import { DetailedPageComponent } from '../detailed-page/detailed-page.component'
 import { MainPageComponent } from '../main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuardService } from 'src/app/auth/services/auth-guard.service';
+import { ErrorPageComponent } from '../error-page/error-page.component';
+import { MaterialModule } from 'src/app/material.module';
 
 const appRoutes: Routes = [
-  { path: 'main', component: MainPageComponent, canActivate: [AuthGuardService] },
+  { path: '', component: MainPageComponent, canActivate: [AuthGuardService] },
   { path: 'details/:id/:title', component: DetailedPageComponent, canActivate: [AuthGuardService] },
+  { path: '**', component: ErrorPageComponent },
 ];
 
 @NgModule({
@@ -26,16 +29,17 @@ const appRoutes: Routes = [
     FilterDatesPipe,
     BottomColorDirective,
     DetailedPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     CommonModule,
+    MaterialModule,
     RouterModule.forChild(appRoutes)
-
   ],
   exports: [
-    ListCardsComponent,
-    MainPageComponent,
-    RouterModule
+    RouterModule,
+    ErrorPageComponent
+
   ]
 })
 export class YoutubeModuleModule { }
