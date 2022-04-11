@@ -11,29 +11,30 @@
 
    &__btn-home  {
    margin-top: 2rem;
-   border-radius: 0.5rem;
+   padding: 1rem;
    background-color: $mainBlue;
+   border-radius: 0.5rem;
+   margin-bottom: 1rem;
 
    }
 
    &__link-home {
     display: block;
-    padding: 1rem;
     width: 5rem;
     border-radius: 0.5rem;
     text-align: center;
     color: aliceblue;
+
    }
  }
 
 .card-wrapper {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  // height: 100%;
+  // width: 100%;
 
 
 }
@@ -43,11 +44,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  padding: 1rem;
   background-color: #90877c2e;
   box-shadow: 0px 5px 34px 14px rgba(53, 159, 240, 0.2) inset;
 
   &__picture {
+    display: flex;
+    flex-direction: column;
     position: relative;
   }
 
@@ -63,8 +66,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%;
     padding: 1rem;
+    max-width: 30rem;
   }
 
   &__main-info {

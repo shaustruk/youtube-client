@@ -9,14 +9,14 @@
       <div class="card">
         <div class="card__picture">
           <div class="card__picture_img">
-            <img src="{{info.snippet.thumbnails.standard.url}}" alt="image">
+            <img src="{{info.snippet.thumbnails.high.url}}" alt="image">
           </div>
           <div class="card__picture_number">#{{idInList}}</div>
         </div>
         <div class="card__content">
           <div class="card__main-info">
             <div>
-              <span class="card__title">{{info.snippet.title}}</span>
+              <span class="card__title">{{info.snippet.localized.title}}</span>
               <span class="card__idx">#{{idInList}}</span>
             </div>
             <div class="card__date">{{info.snippet.publishedAt | date}}</div>

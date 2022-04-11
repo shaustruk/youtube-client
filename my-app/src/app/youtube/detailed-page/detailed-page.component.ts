@@ -20,9 +20,8 @@ export class DetailedPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    console.log(this.route.snapshot);
     this.titleCard = this.route.snapshot.params['title'];
-    this.route.params.subscribe((params: Params) => {
-    })
     this.info = this.listCards.filter((el => el.id == this.id))[0];
     this.idInList = this.listCards.indexOf(this.info);
   }

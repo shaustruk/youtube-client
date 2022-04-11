@@ -53,14 +53,13 @@
 
   &__btn-more {
     margin-bottom: 1rem;
-    background-color: $mainBlue;
     border-radius: 0.5rem;
 
     &_link {
       display: block;
       width: 7rem;
-      padding: 1rem;
       text-align: center;
+      background-color: $mainBlue;
       color: #e5e5e5;
     }
   }

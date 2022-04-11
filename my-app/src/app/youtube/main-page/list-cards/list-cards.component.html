@@ -41,7 +41,9 @@
             {{info.snippet.localized.title}}
           </div>
           <div class="card__btn-more">
-            <a class="card__btn-more_link" [routerLink]="['/details', info.id, info.snippet.title]"> more...</a>
+            <button mat-flat-button class="card__btn-more_link"
+              [routerLink]="['/details', info.id, info.snippet.title]">
+              more...</button>
           </div>
           <div [appBottomColor]='info.snippet.publishedAt' class="card__bottom">
             {{info.snippet.publishedAt | date}}

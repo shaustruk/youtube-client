@@ -12,7 +12,9 @@ export class HeaderComponent {
   public isShowCards: boolean = false;
   public showCards(isShowCards: boolean) {
     this.isShowCards = isShowCards;
+    console.log(isShowCards);
   }
+
   constructor(private auth: LoginServiceService) { }
   exitFromApp(status: string) {
     this.auth.logOut();

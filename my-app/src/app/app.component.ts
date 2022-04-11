@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +6,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./app.component.scss', '../SCSS/null.scss'],
 })
 export class AppComponent {
-  private isShowCards: boolean;
-  private isShowSettingSorts: boolean;
+
 
 
   constructor() { }
