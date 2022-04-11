@@ -6,19 +6,17 @@ import { IUser } from '../model/user-interface';
 })
 export class LoginServiceService {
   private isLoggedIn: boolean = false;
+
   constructor() { }
 
   isAuth() {
-    return new Promise((resolve, reject) => {
-      resolve(this.isLoggedIn);
-    })
+    return this.isLoggedIn;
+
   }
-  logIn(user: IUser) {
+  logIn() {
     this.isLoggedIn = true;
     console.log(this.isLoggedIn)
-    return localStorage.setItem(user.login, user.password);
-
-
+    // return localStorage.setItem(user.login, user.password);
   }
 
   logOut() {

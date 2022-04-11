@@ -1,11 +1,29 @@
-.auth-page {
-  height: 100%;
-}
+@import '../../../SCSS/variable.scss';
 .wrapper {
   display: flex;
-  justify-content: center;
-  min-height: 100%;
+  align-items: center;
+  flex-direction: column;
   height: 84vh;
+  min-width: 100%;
+ }
+
+ .detailed-page{
+
+   &__btn-home  {
+   margin-top: 2rem;
+   border-radius: 0.5rem;
+   background-color: $mainBlue;
+
+   }
+
+   &__link-home {
+    display: block;
+    padding: 1rem;
+    width: 5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: aliceblue;
+   }
  }
 
 .card-wrapper {
@@ -15,13 +33,71 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  width: 100%;
+
 
 }
 
 .card {
   display: flex;
-  height: 20rem;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  border: 2px solid grey;
+  width: 100%;
+  background-color: #90877c2e;
+  box-shadow: 0px 5px 34px 14px rgba(53, 159, 240, 0.2) inset;
+
+  &__picture {
+    position: relative;
+  }
+
+  &__picture_number {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    font-size: 2rem;
+    color: aliceblue;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 1rem;
+  }
+
+  &__main-info {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__date {
+    font-size: 1rem;
+  }
+
+  &__description {
+    justify-content: stretch;
+  }
+
+   &__description_title {
+    font-weight: bold;
+  }
+
+  &__description_info {
+    text-align: justify;
+  }
+
+  &__statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  }
+
+
 }

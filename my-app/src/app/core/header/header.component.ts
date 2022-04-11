@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginServiceService } from 'src/app/auth/services/login-service.service';
 
 
 @Component({
@@ -12,8 +13,10 @@ export class HeaderComponent {
   public showCards(isShowCards: boolean) {
     this.isShowCards = isShowCards;
   }
-  constructor() { }
-
+  constructor(private auth: LoginServiceService) { }
+  exitFromApp(status: string) {
+    this.auth.logOut();
+  }
 
 }
 

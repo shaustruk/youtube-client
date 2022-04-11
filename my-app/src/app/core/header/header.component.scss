@@ -1,3 +1,5 @@
+@import '../../../SCSS/variable.scss';
+
 .header {
   display: flex;
   height: 10vh;
@@ -28,5 +30,21 @@
     height: 100%;
     padding: 0.5rem;
 
+  }
+}
+
+.header-btn {
+
+  &__btn-exit {
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  background-color: $mainBlue;
+  }
+
+  &__link-exit {
+    width: 5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: aliceblue;
   }
 }

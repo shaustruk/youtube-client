@@ -29,12 +29,13 @@ export class AuthComponent implements OnInit {
   constructor(private loginService: LoginServiceService, private router: Router) { }
 
   submitLogin(myform: NgForm) {
+    console.log(myform);
     localStorage.clear();
     // const localSt = localStorage.getItem(this.user.login);
-    this.loginService.logIn(this.user);
   }
 
   goToApp() {
+    this.loginService.logIn();
     this.router.navigate(['/main']);
   }
 
