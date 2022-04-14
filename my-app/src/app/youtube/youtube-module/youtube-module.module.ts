@@ -7,17 +7,14 @@ import { FilterViewsPipe } from '../pipes/filter-views.pipe';
 import { FilterWordPipe } from '../pipes/filter-word.pipe';
 import { BottomColorDirective } from '../directives/bottom-color.directive';
 import { DetailedPageComponent } from '../detailed-page/detailed-page.component';
-import { MainPageComponent } from '../main-page/main-page.component';
+import { MainPageComponent } from '../main-page/main-page-comp/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuardService } from 'src/app/auth/services/auth-guard.service';
 import { ErrorPageComponent } from '../error-page/error-page.component';
 import { MaterialModule } from 'src/app/material.module';
+import { YoutubeRoutingModule } from './youtube-routing.module';
+import { ContentContainerComponent } from '../content-container/content-container.component';
 
-const appRoutes: Routes = [
-  { path: '', component: MainPageComponent, canActivate: [AuthGuardService] },
-  { path: 'details/:id/:title', component: DetailedPageComponent, canActivate: [AuthGuardService] },
-  { path: '**', component: ErrorPageComponent },
-];
+
 
 @NgModule({
   declarations: [
@@ -29,17 +26,14 @@ const appRoutes: Routes = [
     FilterDatesPipe,
     BottomColorDirective,
     DetailedPageComponent,
+    ContentContainerComponent,
     ErrorPageComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    RouterModule.forChild(appRoutes)
+    YoutubeRoutingModule
   ],
-  exports: [
-    RouterModule,
-    ErrorPageComponent
-
-  ]
+  exports: []
 })
 export class YoutubeModuleModule { }

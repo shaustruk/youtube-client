@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { IUser } from './model/user-interface';
 import { LoginServiceService } from './services/login-service.service';
 import { FormGroup, NgForm } from '@angular/forms';
 import { keyframes } from '@angular/animations';
 import { Router } from '@angular/router';
+import { LocalStorageService } from './services/local-storage.service';
 
 @Component({
   selector: 'app-auth',
@@ -13,9 +14,9 @@ import { Router } from '@angular/router';
      background-color: #bd1d8c4f;
   }`]
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
 
-  public authData = {
+  public authLabel = {
     title: 'Login',
     login: 'login',
     password: 'password'
@@ -25,21 +26,31 @@ export class AuthComponent implements OnInit {
     login: '',
     password: ''
   };
-  public form: FormGroup;
-  constructor(private loginService: LoginServiceService, private router: Router) { }
 
-  submitLogin(myform: NgForm) {
-    console.log(myform);
-    localStorage.clear();
-    // const localSt = localStorage.getItem(this.user.login);
+
+  public form: FormGroup;
+  constructor(private loginService: LoginServiceService,
+    private router: Router,
+    private storageService: LocalStorageService) {
+
   }
+  ngOnOnit(): void { }
+
 
   goToApp() {
-    this.loginService.logIn();
-    this.router.navigate(['/main']);
-  }
-
-  ngOnInit(): void {
+    if (this.storageService.getItem('login') &&
+      this.storageService.getItem('password')) {
+      this.loginService.logIn();
+      this.router.navigate(['/main']);
+    }
+    else {
+      if ((this.user.login !== '' && this.user.password !== '')) {
+        this.storageService.setItem('login', this.user.login);
+        this.storageService.setItem('password', this.user.password);
+        this.loginService.logIn();
+        this.router.navigate(['/main']);
+      }
+    }
   }
 
 }

@@ -30,7 +30,8 @@ export class MainPageComponent {
   // public get isShowCards() {
   //   return this._isShowCards;
   // }
-  constructor(private serviceSearch: ShowCardService) {
+  constructor(private serviceSearch: ShowCardService) { }
+  ngOnInit(): void {
     this.serviceSearch.clickSearch$.subscribe(value => {
       this.isShowCards = value;
     });
@@ -38,19 +39,10 @@ export class MainPageComponent {
     this.serviceSearch.clickSetting$.subscribe(value => {
       this.isShowFilters = value;
     })
-  }
-
-
-  ngOnOnit(): void {
-
 
   }
-
 
 }
-
-
-
 
 
 

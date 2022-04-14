@@ -3,12 +3,11 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from '../auth.component';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { MainPageComponent } from 'src/app/youtube/main-page/main-page-comp/main-page.component';
 
-const appRoutes: Routes = [
+const routes: Routes = [
   { path: '', component: AuthComponent },
-  { path: 'main', loadChildren: () => import('../../youtube/youtube-module/youtube-module.module').then(m => m.YoutubeModuleModule) },
-]
-
+];
 @NgModule({
   declarations: [
     AuthComponent,
@@ -17,14 +16,11 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forChild(routes)
 
   ],
-  providers: [
-    FormsModule,
-  ],
   exports: [
-    RouterModule
-  ]
+    AuthComponent,
+    RouterModule]
 })
 export class AuthModuleModule { }

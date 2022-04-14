@@ -6,7 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModuleModule } from './auth/auth-module/auth-module.module';
 import { CoreModuleModule } from './core/core-module/core-module.module';
 import { YoutubeModuleModule } from './youtube/youtube-module/youtube-module.module';
-import { RouterModule } from '@angular/router';
+import { YoutubeRoutingModule } from './youtube/youtube-module/youtube-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,9 +21,7 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     BrowserAnimationsModule,
     CoreModuleModule,
-    AuthModuleModule,
-    YoutubeModuleModule,
-    RouterModule
+    AppRoutingModule
   ],
   bootstrap: [AppComponent],
 })

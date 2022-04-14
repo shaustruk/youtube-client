@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { IUser } from '../model/user-interface';
 
 @Injectable({
@@ -6,8 +8,19 @@ import { IUser } from '../model/user-interface';
 })
 export class LoginServiceService {
   private isLoggedIn: boolean = false;
+  private key: string = '';
+  private value: string = '';
 
-  constructor() { }
+  public clickExit$ = new Subject<boolean>();
+
+
+  public exit(event: boolean): void {
+    this.clickExit$.next(event);
+
+  };
+  constructor(private route: Router) { }
+
+
 
   isAuth() {
     return this.isLoggedIn;
@@ -15,11 +28,10 @@ export class LoginServiceService {
   }
   logIn() {
     this.isLoggedIn = true;
-    console.log(this.isLoggedIn)
-    // return localStorage.setItem(user.login, user.password);
   }
 
   logOut() {
     this.isLoggedIn = false;
+    this.route.navigate(['/auth'])
   }
 }

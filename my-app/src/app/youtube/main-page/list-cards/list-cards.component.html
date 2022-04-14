@@ -2,7 +2,7 @@
   <div class="cards-box">
     <div class="list-cards">
       <div *ngFor="let info of listCards |
-       filterWord:searchWord |
+        filterWord:searchWord |
         filterViews:clickView |
           filterDates:clickDate" class="card">
         <div class="card-container">
@@ -41,8 +41,7 @@
             {{info.snippet.localized.title}}
           </div>
           <div class="card__btn-more">
-            <button mat-flat-button class="card__btn-more_link"
-              [routerLink]="['/details', info.id, info.snippet.title]">
+            <button mat-flat-button class="card__btn-more_link" [routerLink]="['/main', info.id]">
               more...</button>
           </div>
           <div [appBottomColor]='info.snippet.publishedAt' class="card__bottom">
