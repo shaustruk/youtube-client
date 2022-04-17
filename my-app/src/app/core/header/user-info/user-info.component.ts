@@ -14,6 +14,7 @@ export class UserInfoComponent {
 
   ngOnInit(): void {
     this.subscription = this.logoService.logoStatus().subscribe(status => this.userStatus = status);
+
   }
 
   ngOnDestroy() {
