@@ -12,9 +12,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from '../error-page/error-page.component';
 import { MaterialModule } from 'src/app/material.module';
 import { YoutubeRoutingModule } from './youtube-routing.module';
-import { ContentContainerComponent } from '../content-container/content-container.component';
-
-
 
 @NgModule({
   declarations: [
@@ -26,7 +23,6 @@ import { ContentContainerComponent } from '../content-container/content-containe
     FilterDatesPipe,
     BottomColorDirective,
     DetailedPageComponent,
-    ContentContainerComponent,
     ErrorPageComponent
   ],
   imports: [

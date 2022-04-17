@@ -16,7 +16,8 @@ export class LocalStorageService {
   }
 
   clear() {
-    localStorage.clear();
+    localStorage.removeItem('login');
+    localStorage.removeItem('password');
   }
 }
 

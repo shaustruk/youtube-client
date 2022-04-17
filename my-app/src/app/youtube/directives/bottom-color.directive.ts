@@ -1,5 +1,4 @@
-import { Directive, OnInit, ElementRef, Input, AfterViewInit, Renderer2, TemplateRef, ViewContainerRef } from '@angular/core';
-import { items } from '../../mocks/cards-list.mock';
+import { Directive, OnInit, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[appBottomColor]'

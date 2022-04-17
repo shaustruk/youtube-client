@@ -10,7 +10,9 @@ import { ShowCardService } from '../../services/show-card.service';
 export class SettingsButtonComponent {
   private isShowBoxSorts: boolean = false;
 
+  constructor(private service: ShowCardService) {
 
+  }
   public clickSettingBtn(value: unknown) {
     this.isShowBoxSorts = value as boolean ? !this.isShowBoxSorts : value as boolean;
     // this.isShowBoxSorts = !this.isShowBoxSorts;
@@ -18,9 +20,7 @@ export class SettingsButtonComponent {
   }
 
 
-  constructor(private service: ShowCardService) {
 
-  }
 
 }
 
