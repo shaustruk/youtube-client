@@ -8,10 +8,10 @@ import { FilterWordPipe } from '../pipes/filter-word.pipe';
 import { BottomColorDirective } from '../directives/bottom-color.directive';
 import { DetailedPageComponent } from '../detailed-page/detailed-page.component';
 import { MainPageComponent } from '../main-page/main-page-comp/main-page.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ErrorPageComponent } from '../error-page/error-page.component';
 import { MaterialModule } from 'src/app/material.module';
 import { YoutubeRoutingModule } from './youtube-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
   imports: [
     CommonModule,
     MaterialModule,
-    YoutubeRoutingModule
+    YoutubeRoutingModule,
+    HttpClientModule
   ],
   exports: []
 })

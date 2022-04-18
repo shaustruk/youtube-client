@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ShowCardService } from '../../services/show-card.service';
+import { Observable } from 'rxjs';
+import { HttpServiceService } from '../../services/http-service.service';
 
 
 @Component({
@@ -13,15 +15,21 @@ export class SearchAreaComponent {
     searchPlaceholder: 'What are you want to find out?',
     searchBtn: 'search'
   };
-  private isClickSearch: boolean = false;
 
-  // @Output() clickSearch: EventEmitter<boolean> = new EventEmitter();
-  constructor(private serviceSearch: ShowCardService) { }
-  showCard(event: unknown): void {
-    this.isClickSearch = event as boolean;
-    this.serviceSearch.showCards(this.isClickSearch);
+  constructor(private http: HttpServiceService) { }
+
+  // showCard(event: unknown): void {
+  //   this.isClickSearch = event as boolean;
+  //   this.serviceSearch.showCards(this.isClickSearch);
+  // }
+  onSearch($event: any) {
+    const valueSearch = $event.target.value;
+    console.log(valueSearch);
   }
-
+  ngOnInit(): void {
+    this.http.getInfo('').subscribe((data) =>
+      console.log(data));
+  }
 }
 
 

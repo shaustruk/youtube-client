@@ -10,6 +10,6 @@ export interface IItems {
   pageInfo: {
     totalResults: number,
     resultsPerPage: number
-    card: IItem[];
+    items: IItem[];
   }
 }
