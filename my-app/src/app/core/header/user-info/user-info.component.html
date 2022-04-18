@@ -1,10 +1,6 @@
 <div class="user-info">
-  <!-- <p [appLogStatus]='userStatus' class="user-info__info" *ngIf="!userStatus">{{'You are log-in'}} </p>
-  <p [appLogStatus]='userStatus' class="user-info__info" *ngIf="userStatus">{{'You have to log-in'}}</p> -->
-  <div [style.background-color]="userStatus === true? 'green' : 'red'" class=" user-info__info" *ngIf="userStatus">
-    {{'You are log-in'}}</div>
-  <div [style.background-color]="userStatus === false? 'red' : 'green'" class="user-info__info" *ngIf="!userStatus">
-    {{'You have to log-in'}}</div>
+  <div [appLogStatus]='userStatus' class="user-info__info" *ngIf="userStatus">{{'You are log-in'}} </div>
+  <div [appLogStatus]='userStatus' class="user-info__info" *ngIf="!userStatus">{{'You have to log-in'}}</div>
   <span class="material-icons">
     account_circle
   </span>

@@ -7,6 +7,7 @@ import { UserInfoComponent } from '../header/user-info/user-info.component';
 import { SearchAreaComponent } from '../header/search-area/search-area.component';
 import { SettingsButtonComponent } from '../header/settings-button/settings-button.component';
 import { RouterModule } from '@angular/router';
+import { SharedModuleModule } from 'src/app/shared/shared-module/shared-module.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    SharedModuleModule
 
   ],
   exports: [

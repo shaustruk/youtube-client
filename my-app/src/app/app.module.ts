@@ -5,12 +5,11 @@ import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModuleModule } from './core/core-module/core-module.module';
 import { AppRoutingModule } from './app-routing.module';
-import { LogStatusDirective } from './shared/log-status.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LogStatusDirective,
+
   ],
   imports: [
     BrowserModule,

@@ -8,13 +8,12 @@ import { LoginServiceService } from 'src/app/auth/services/login-service.service
   styleUrls: ['./user-info.component.scss'],
 })
 export class UserInfoComponent {
-  public userStatus: boolean;
+  public userStatus: boolean = false;
   private subscription: Subscription;
   constructor(private logoService: LoginServiceService) { }
 
   ngOnInit(): void {
     this.subscription = this.logoService.logoStatus().subscribe(status => this.userStatus = status);
-
   }
 
   ngOnDestroy() {

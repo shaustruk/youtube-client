@@ -4,7 +4,7 @@ import { Directive, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
   selector: '[appLogStatus]'
 })
 export class LogStatusDirective implements OnInit {
-  private logStatus: string = 'false';
+  private logStatus: boolean = false;
 
   @Input('appLogStatus') status: boolean;
 
@@ -13,12 +13,12 @@ export class LogStatusDirective implements OnInit {
 
   ngOnInit(): void {
     const { nativeElement } = this.dateTag;
-    this.logStatus = String(this.status);
-    // if (this.logStatus === 'false') {
-    //   this.renderer.setStyle(nativeElement, 'background-color', 'yellow')
-    // }
-    // else {
-    //   this.renderer.setStyle(nativeElement, 'background-color', 'green')
-    // };
+    this.logStatus = this.status;
+    if (this.logStatus) {
+      this.renderer.setStyle(nativeElement, 'background-color', 'green')
+    }
+    else {
+      this.renderer.setStyle(nativeElement, 'background-color', 'red')
+    };
   }
 }
