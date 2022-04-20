@@ -12,6 +12,7 @@ import { ErrorPageComponent } from '../error-page/error-page.component';
 import { MaterialModule } from 'src/app/material.module';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminPageComponent } from '../admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpClientModule } from '@angular/common/http';
     FilterDatesPipe,
     BottomColorDirective,
     DetailedPageComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    AdminPageComponent
   ],
   imports: [
     CommonModule,
