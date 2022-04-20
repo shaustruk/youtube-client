@@ -1,18 +1,29 @@
 <div class="auth-page section">
   <div class="wrapper">
     <div class="content">
+      <div [appLogStatus]='logStatus' class="content__title" *ngIf="logStatus">{{'You are log-in'}} </div>
+      <div [appLogStatus]='logStatus' class="content__title" *ngIf="!logStatus">{{'You have to log-in'}}</div>
       <!-- <form class='auth-form' #myForm="ngForm" novalidate (ngSubmit)="submitLogin(myForm)"> -->
-      <form class='auth-form' #myForm="ngForm" novalidate>
-        <div class="auth-form__name">
-          <h2 class="auth-form__title">{{authLabel.title}}</h2>
-          <label for="name">{{authLabel.login}}</label>
-          <input class="auth-form__input" required="" [(ngModel)]="user.login" name="name" id="name" type="text">
-        </div>
-        <div class="auth-form__password">
-          <label for="password">{{authLabel.password}}</label>
-          <input class="auth-form__input" required="" [(ngModel)]="user.password" name="password" id="password"
-            type="password">
-        </div>
+
+      <form class='auth-form' [formGroup]="loginForm" #myForm="ngForm" novalidate>
+        <h2 class="auth-form__title">{{authLabel.title}}</h2>
+        <mat-form-field class="auth-form__name">
+          <mat-label class="auth-form__name">login</mat-label>
+          <input matInput class="auth-form__input" formControlName="login" required="" [(ngModel)]="user.login"
+            name="name" id="name" type="email">
+          <mat-error *ngIf="loginForm.controls['login'].hasError('email')">The login email is invalid
+          </mat-error>
+          <mat-error *ngIf="loginForm.controls['login'].hasError('required')">Please enter a login email
+          </mat-error>
+
+        </mat-form-field>
+        <mat-form-field class="auth-form__password">
+          <mat-label class="auth-form__name">{{authLabel.password}}</mat-label>
+          <input matInput class="auth-form__input" formControlName="password" required="" [(ngModel)]="user.password"
+            name="password" id="password" type="password">
+          <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
+          <mat-error></mat-error>
+        </mat-form-field>
         <button class="auth-form__btn" (click)="goToApp()" type="submit">{{authLabel.title}}</button>
       </form>
     </div>

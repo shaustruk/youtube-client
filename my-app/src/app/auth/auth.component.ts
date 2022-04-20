@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
 import { IUser } from './model/user-interface';
 import { LoginServiceService } from './services/login-service.service';
-import { FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorageService } from './services/local-storage.service';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
@@ -37,14 +37,32 @@ export class AuthComponent {
     private storageService: LocalStorageService) {
 
   }
+  private login: string = ('');
+  private password: string = ('');
 
-  private login = new BehaviorSubject<string>('');
-  private password = new BehaviorSubject<string>('');
+  loginForm: FormGroup;
 
   ngOnInit(): void {
-    this.login.next(this.user.login);
-    this.password.next(this.user.password);
+    /*-----form-----*/
+    this.loginForm = new FormGroup({
+      "login": new FormControl('', [Validators.required, Validators.email]),
+      "password": new FormControl(''),
+    })
 
+    /*-----login-----*/
+    this.loginForm.controls['login'].valueChanges.subscribe((value) => {
+      this.login = value;
+      console.log(this.login)
+    })
+    this.loginForm.controls['password'].valueChanges.subscribe((value) => {
+      this.password = value;
+      console.log(this.password)
+    })
+
+
+    /*-----status-----*/
+    this.subscription = this.loginService.logoStatus().subscribe(status => this.logStatus = status);
+    console.log(this.logStatus)
   }
 
   goToApp() {

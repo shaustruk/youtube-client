@@ -15,10 +15,11 @@ export class LogStatusDirective implements OnInit {
     const { nativeElement } = this.dateTag;
     this.logStatus = this.status;
     if (this.logStatus) {
-      this.renderer.setStyle(nativeElement, 'background-color', 'green')
+      this.renderer.setStyle(nativeElement, 'background-color', '#49bf49')
     }
     else {
       this.renderer.setStyle(nativeElement, 'background-color', 'red')
     };
+
   }
 }

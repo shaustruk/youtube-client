@@ -33,10 +33,10 @@ export class ListCardsComponent {
       this.word = word;
       console.log(this.word)
     })
-    this.http.getInfo(this.word).subscribe((data) => {
-      this.channels = data.items;
-      console.log(this.channels);
-    })
+    // this.http.getInfo(this.word).subscribe((data) => {
+    //   this.channels = data.items;
+    //   console.log(this.channels);
+    // })
   }
 
 

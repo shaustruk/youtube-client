@@ -14,11 +14,11 @@ export class HttpServiceService {
 
   constructor(private HTTPClient: HttpClient) { }
 
-  getInfo(word: string): Observable<IItemsYoutube> {
-    const url = `https://www.googleapis.com/youtube/v3/search?key=${this.key}&type=video&part=snippet&maxResults=15&q=angular=${word}`;
+  // getInfo(word: string): Observable<IItemsYoutube> {
+  // const url = `https://www.googleapis.com/youtube/v3/search?key=${this.key}&type=video&part=snippet&maxResults=15&q=angular=${word}`;
 
-    return this.HTTPClient.get<IItemsYoutube>(url);
-  }
+  // return this.HTTPClient.get<IItemsYoutube>(url);
+  // }
 
   sendWord(word: string) {
     this.subject.next(word);
