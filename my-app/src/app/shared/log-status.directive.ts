@@ -18,7 +18,7 @@ export class LogStatusDirective implements OnInit {
       this.renderer.setStyle(nativeElement, 'background-color', '#49bf49')
     }
     else {
-      this.renderer.setStyle(nativeElement, 'background-color', 'red')
+      this.renderer.setStyle(nativeElement, 'background-color', '#e45d5d')
     };
 
   }
