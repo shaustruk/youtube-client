@@ -5,7 +5,7 @@
       <div [appLogStatus]='logStatus' class="content__title" *ngIf="!logStatus">{{'You have to log-in'}}</div>
       <!-- <form class='auth-form' #myForm="ngForm" novalidate (ngSubmit)="submitLogin(myForm)"> -->
 
-      <form class='auth-form' [formGroup]="loginForm" #myForm="ngForm" novalidate (ngSubmit)="goToApp()">
+      <form class='auth-form' [formGroup]="loginForm" #myForm="ngForm" (ngSubmit)="goToApp()">
         <h2 class="auth-form__title">{{authLabel.title}}</h2>
         <mat-form-field class="auth-form__name">
           <mat-label class="auth-form__name">login</mat-label>

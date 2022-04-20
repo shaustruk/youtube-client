@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from '../auth.component';
 import { FormsModule, NgForm, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { LogStatusDirective } from 'src/app/shared/log-status.directive';
 import { SharedModuleModule } from 'src/app/shared/shared-module/shared-module.module';
 import { MaterialModule } from 'src/app/material.module';
 

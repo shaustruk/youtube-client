@@ -30,7 +30,6 @@ export class AuthComponent {
   public logStatus: boolean = false;
   private subscription: Subscription;
 
-  public form: FormGroup;
   public hide: boolean = true;
 
   constructor(private loginService: LoginServiceService,
@@ -41,7 +40,7 @@ export class AuthComponent {
   private login: string = ('');
   public password: string = ('');
 
-  loginForm: FormGroup;
+  public loginForm: FormGroup;
 
   ngOnInit(): void {
     /*-----form-----*/

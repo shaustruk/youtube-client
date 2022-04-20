@@ -13,6 +13,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { YoutubeRoutingModule } from './youtube-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPageComponent } from '../admin-page/admin-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { AdminPageComponent } from '../admin-page/admin-page.component';
     CommonModule,
     MaterialModule,
     YoutubeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: []
 })
