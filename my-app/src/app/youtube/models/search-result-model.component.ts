@@ -1,4 +1,4 @@
-import { IItem } from './search-item-model.component';
+import { IItem, IVideoYoutube } from './search-item-model.component';
 
 export interface IPageinfo {
   totalResults: number,
@@ -12,4 +12,12 @@ export interface IItems {
     resultsPerPage: number
     items: IItem[];
   }
+}
+/*-----HTTP-----*/
+export interface IItemsYoutube {
+  kind: string,
+  etag: string,
+  totalResults: number,
+  resultsPerPage: number
+  items: IVideoYoutube[];
 }

@@ -22,14 +22,16 @@ export class SearchAreaComponent {
   //   this.isClickSearch = event as boolean;
   //   this.serviceSearch.showCards(this.isClickSearch);
   // }
-  onSearch($event: any) {
-    const valueSearch = $event.target.value;
+  onSearch(event: Event) {
+    const valueSearch = (<HTMLInputElement>event.target).value;
     console.log(valueSearch);
+    // this.http.getInfo(valueSearch).subscribe((word) => {
+    //   word = valueSearch;
+    // })
   }
-  ngOnInit(): void {
-    this.http.getInfo('').subscribe((data) =>
-      console.log(data));
-  }
+
+
+  ngOnInit(): void { }
 }
 
 

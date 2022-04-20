@@ -1,10 +1,11 @@
 <div class="section section-cards">
   <div class="cards-box">
     <div class="list-cards">
-      <div *ngFor="let info of listCards |
+      <!-- <div *ngFor="let info of channels |
         filterWord:searchWord |
         filterViews:clickView |
-          filterDates:clickDate" class="card">
+          filterDates:clickDate" class="card"> -->
+      <div *ngFor="let info of channels" class="card">
         <div class="card-container">
           <div class="card__img">
             <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
@@ -15,30 +16,33 @@
                 <span class="material-icons">
                   visibility
                 </span>
-                <span>{{info.statistics.viewCount}}</span>
+                <span>{{''}}</span>
               </div>
               <div class="card__like">
                 <span class="material-icons">
                   thumb_up
                 </span>
-                <span>{{info.statistics.likeCount}}</span>
+                <span>{{''}}</span>
               </div>
               <div class="card__dislike">
                 <span class="material-icons">
                   thumb_down
                 </span>
-                <span>{{info.statistics.dislikeCount}}</span>
+                <span>{{''}}</span>
               </div>
               <div class="card__comment">
                 <span class="material-icons">
                   question_answer
                 </span>
-                <span>{{info.statistics.commentCount}}</span>
+                <span>{{''}}</span>
               </div>
             </div>
           </div>
           <div class="card__title">
-            {{info.snippet.localized.title}}
+            {{info.snippet.channelTitle}}
+          </div>
+          <div class="card__name">
+            {{(info.snippet.title).slice(0, 50)}}...
           </div>
           <div class="card__btn-more">
             <button mat-flat-button class="card__btn-more_link" [routerLink]="['/main', info.id]">

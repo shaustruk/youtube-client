@@ -48,3 +48,22 @@ export interface IItem {
   statistics: IStatistics,
 }
 
+/*-----YOutube-----*/
+
+export interface ISnippetYoutube {
+  channelId: string,
+  channelTitle: string,
+  description: string,
+  liveBroadcastContent: string,
+  publishTime: string,
+  publishedAt: string,
+  thumbnails: IThumbnails,
+  title: string
+}
+export interface IVideoYoutube {
+  kind: string,
+  etag: string,
+  id: string,
+  snippet: ISnippetYoutube,
+}
+
