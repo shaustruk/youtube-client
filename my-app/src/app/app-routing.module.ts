@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { AuthGuardService } from './auth/services/auth-guard.service';
 import { ErrorPageComponent } from './youtube/error-page/error-page.component';
+import { AdminPageComponent } from './youtube/admin-page/admin-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
@@ -17,6 +18,9 @@ const routes: Routes = [
     path: 'main',
     loadChildren: () => import('./youtube/youtube-module/youtube-module.module').then(m => m.YoutubeModuleModule),
     canActivate: [AuthGuardService]
+  },
+  {
+    path: 'admin', component: AdminPageComponent, canActivate: [AuthGuardService]
   },
   { path: '**', component: ErrorPageComponent },
 ]

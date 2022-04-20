@@ -11,7 +11,7 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
   styles: [`input.ng-invalid.ng-touched {
-     background-color: #bd1d8c4f;
+     background-color: #de1d1d4f;
   }`]
 })
 export class AuthComponent {
@@ -31,6 +31,7 @@ export class AuthComponent {
   private subscription: Subscription;
 
   public form: FormGroup;
+  public hide: boolean = true;
 
   constructor(private loginService: LoginServiceService,
     private router: Router,
@@ -38,7 +39,7 @@ export class AuthComponent {
 
   }
   private login: string = ('');
-  private password: string = ('');
+  public password: string = ('');
 
   loginForm: FormGroup;
 
@@ -46,17 +47,15 @@ export class AuthComponent {
     /*-----form-----*/
     this.loginForm = new FormGroup({
       "login": new FormControl('', [Validators.required, Validators.email]),
-      "password": new FormControl(''),
+      "password": new FormControl('', [Validators.required, Validators.minLength(8)]),
     })
 
     /*-----login-----*/
     this.loginForm.controls['login'].valueChanges.subscribe((value) => {
       this.login = value;
-      console.log(this.login)
     })
     this.loginForm.controls['password'].valueChanges.subscribe((value) => {
       this.password = value;
-      console.log(this.password)
     })
 
 

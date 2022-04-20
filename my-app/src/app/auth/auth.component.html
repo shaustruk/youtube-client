@@ -5,26 +5,32 @@
       <div [appLogStatus]='logStatus' class="content__title" *ngIf="!logStatus">{{'You have to log-in'}}</div>
       <!-- <form class='auth-form' #myForm="ngForm" novalidate (ngSubmit)="submitLogin(myForm)"> -->
 
-      <form class='auth-form' [formGroup]="loginForm" #myForm="ngForm" novalidate>
+      <form class='auth-form' [formGroup]="loginForm" #myForm="ngForm" novalidate (ngSubmit)="goToApp()">
         <h2 class="auth-form__title">{{authLabel.title}}</h2>
         <mat-form-field class="auth-form__name">
           <mat-label class="auth-form__name">login</mat-label>
           <input matInput class="auth-form__input" formControlName="login" required="" [(ngModel)]="user.login"
             name="name" id="name" type="email">
-          <mat-error *ngIf="loginForm.controls['login'].hasError('email')">The login email is invalid
+          <mat-error style="color: brown;" *ngIf="loginForm.controls['login'].hasError('email')">The login email is
+            invalid
           </mat-error>
           <mat-error *ngIf="loginForm.controls['login'].hasError('required')">Please enter a login email
           </mat-error>
-
         </mat-form-field>
         <mat-form-field class="auth-form__password">
           <mat-label class="auth-form__name">{{authLabel.password}}</mat-label>
-          <input matInput class="auth-form__input" formControlName="password" required="" [(ngModel)]="user.password"
-            name="password" id="password" type="password">
-          <!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-          <mat-error></mat-error>
+          <input matInput passwordValidator class="auth-form__input" formControlName="password" required=""
+            [(ngModel)]="user.password" name="password" id="password" [type]="hide ? 'password' : 'text'">
+          <mat-icon style="width: 0em;" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' :
+            'visibility'}}</mat-icon>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('required')">Please enter a password</mat-error>
+          <mat-error *ngIf="password.length>0 && password.length <= 8">You password must have min 8 elements</mat-error>
+          <mat-error *ngIf="loginForm.controls['password'].hasError('passwordValidator')">You password must have lower
+            case, upper case, symbols
+            and
+            numbers</mat-error>
         </mat-form-field>
-        <button class="auth-form__btn" (click)="goToApp()" type="submit">{{authLabel.title}}</button>
+        <button class="auth-form__btn" [disabled]="loginForm.invalid" type="submit">{{authLabel.title}}</button>
       </form>
     </div>
   </div>

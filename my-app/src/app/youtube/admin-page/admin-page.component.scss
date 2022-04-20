@@ -1,14 +1,61 @@
 @import '../../../SCSS/variable.scss';
-.admin-page {
+.wrapper {
+  height: 84vh;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.admin-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__btn-home {
+    width: 5rem;
+    margin: 1rem 0 1rem 0;
+    }
+
+   &__icon-home  {
+  color: $mainBlue;
+  font-size: 2rem;
+   }
+}
+.admin-form {
   display: flex;
   flex-direction: column;
-  height: 84vh;
-}
-.wrapper {
-  display: flex;
-  flex: 1 1 auto;
-  justify-content: center;
   align-items: center;
+  width: 30rem;
+  height: 60%;
+  padding: 1rem;
+  background-color: #F2F2F2;
 
+  &__form {
+      display: flex;
+      flex-direction: column;
+      margin-left: 0.5rem;
+      margin-bottom: 1rem;
+      color: #828282;
+      font-size: 10px;
+      line-height: 12px;
 
-}
+   }
+
+   &__title {
+    font-size: 1rem;
+    align-self: start;
+    padding: 1rem;
+    color: #828282;
+
+   }
+
+   &__input {
+    padding: 0.5rem;
+    height: 1.5rem;
+    border-radius: 0.5rem;
+    color:#828282;
+    background: #E0E0E0;
+
+    }
+  }

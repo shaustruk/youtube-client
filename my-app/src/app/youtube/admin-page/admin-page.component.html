@@ -1,10 +1,26 @@
 <div class="admin-page section">
   <div class="wrapper">
-    <div class="content">
+    <div class="admin-box">
+      <button class="admin-box__btn-home" (click)="goHome()" mat-icon-button>
+        <mat-icon class="admin-box__icon-home">home</mat-icon>
+      </button>
       <form class="admin-form">
-        <h2 class="auth-form__title">Create new card</h2>
-        <mat-form-field>
-
+        <h2 class="admin-form__main-title">Create new card</h2>
+        <mat-form-field class="admin-form__form">
+          <mat-label class="admin-form__title">{{inputArea['title']}}</mat-label>
+          <input matInput class="admin-form__input" placeholder="...">
+        </mat-form-field>
+        <mat-form-field class="admin-form__form">
+          <mat-label class="admin-form__title">{{inputArea['description']}}</mat-label>
+          <input matInput class="admin-form__input" placeholder="...">
+        </mat-form-field>
+        <mat-form-field class="admin-form__form">
+          <mat-label class="admin-form__title">{{ inputArea['img']}}</mat-label>
+          <input matInput class="admin-form__input" placeholder="...">
+        </mat-form-field>
+        <mat-form-field class="admin-form__form">
+          <mat-label class="admin-form__title">Title</mat-label>
+          <input matInput class="admin-form__input" placeholder="...">
         </mat-form-field>
       </form>
     </div>

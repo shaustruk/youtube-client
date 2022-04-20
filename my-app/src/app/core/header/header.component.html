@@ -8,10 +8,18 @@
     <app-user-info></app-user-info>
     <div class="header-btn">
       <div class="header-btn__btn-exit" mat-icon-button>
+        <a class="header-btn__link-exit" (click)='goToAdminPage()' routerLink="">
+          admin-page
+        </a>
+      </div>
+    </div>
+    <div class="header-btn">
+      <div class="header-btn__btn-exit" mat-icon-button>
         <a class="header-btn__link-exit" (click)='exitFromApp("logout")' routerLink="">
           exit
         </a>
       </div>
     </div>
+
   </div>
 </header>

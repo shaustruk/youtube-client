@@ -27,7 +27,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 18rem;
+  height: 22rem;
   width: 25rem;
   padding: 2rem;
   background-color: #F2F2F2;
@@ -39,7 +39,7 @@
    }
 
   &__input {
-    height: 1.5rem;
+    padding: 0.5rem;
     border-radius: 0.5rem;
     color:#828282;
     border: 0.2rem solid #828282a3;
@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: column;
     margin-left: 0.5rem;
+    margin-bottom: 1rem;
     color: #828282;
     font-size: 10px;
     line-height: 12px;
@@ -59,6 +60,7 @@
     align-self: end;
     width: 6rem;
     padding: 1rem;
+    margin-top: 2rem;
     border-radius: 0.5rem;
     background-color: $mainBlue;
     color: aliceblue;
@@ -70,5 +72,3 @@
 .auth-form__btn:disabled{
   background-color:  #2e7de870;
 }
-
-
