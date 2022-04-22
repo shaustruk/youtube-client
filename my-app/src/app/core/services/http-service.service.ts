@@ -21,7 +21,7 @@ export class HttpServiceService {
   private subject = new Subject<any>();
 
   private key: string = 'AIzaSyABKyBQ3_Vv839W4SwpLuU2ms_e9A3g23Q';
-  public channels: IVideo[] = [];
+
   constructor(private HTTPClient: HttpClient) {}
 
   getInfo(word: string): Observable<IVideo[]> {
@@ -55,8 +55,13 @@ export class HttpServiceService {
     );
   }
 
-  getMock() {
-    return;
+  getDetailPage(id: string): Observable<IVideo> {
+    const urlVideos = `https://www.googleapis.com/youtube/v3/videos?key=${this.key}&id=${id}&part=snippet,statistics`;
+    return this.HTTPClient.get<IVideoResponse>(urlVideos).pipe(
+      map(({ items }) => {
+        return items[0];
+      })
+    );
   }
 
   sendWord(word: string) {

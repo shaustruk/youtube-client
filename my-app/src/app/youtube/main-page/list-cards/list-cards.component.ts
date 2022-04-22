@@ -16,13 +16,11 @@ import { data } from 'src/app/mocks/cards-list.mock';
 })
 export class ListCardsComponent {
   public channels: IVideo[] = [];
-  public channel: IItem;
   private subscription: Subscription;
   private word: string = '';
   public id: string;
   constructor(private http: HttpServiceService) {}
 
-  // public listCards: IItem[] = items;
   public title = 'Hello. Push search for start';
   /*------sorts-----*/
   @Input() searchWord: string;

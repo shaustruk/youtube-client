@@ -1,11 +1,10 @@
 <div class="section section-cards">
   <div class="cards-box">
     <div class="list-cards">
-      <!-- <div *ngFor="let info of channels |
+      <div *ngFor="let info of channels |
         filterWord:searchWord |
         filterViews:clickView |
-          filterDates:clickDate" class="card"> -->
-      <div *ngFor="let info of channels" class="card">
+          filterDates:clickDate" class="card">
         <div class="card-container">
           <div class="card__img">
             <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
