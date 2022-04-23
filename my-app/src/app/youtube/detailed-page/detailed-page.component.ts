@@ -12,10 +12,15 @@ import { IVideo } from '../models/search-result-model.component';
 })
 export class DetailedPageComponent implements OnInit {
   public id: string;
-  public titleCard: IItem;
+  public titleCard: string = '';
   public info: IVideo;
-  public idInList: number;
-
+  public titleChannel: string = '';
+  public img: string;
+  public date: string;
+  public description: string = '';
+  public viewCount: string = '';
+  public likeCount: string = '';
+  public commentCount: string = '';
   constructor(
     private route: ActivatedRoute,
     private HTTP: HttpServiceService
@@ -24,10 +29,16 @@ export class DetailedPageComponent implements OnInit {
   ngOnInit(): void {
     /*----mock-----*/
     this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
     this.HTTP.getDetailPage(this.id).subscribe((data) => {
       this.info = data;
-      console.log(this.info);
+      this.img = this.info.snippet.thumbnails.high.url;
+      this.titleChannel = this.info.snippet.channelTitle;
+      this.titleCard = this.info.snippet.title;
+      this.date = this.info.snippet.publishedAt;
+      this.description = this.info.snippet.description;
+      this.viewCount = this.info.statistics.viewCount;
+      this.likeCount = this.info.statistics.viewCount;
+      this.commentCount = this.info.statistics.viewCount;
     });
   }
 }

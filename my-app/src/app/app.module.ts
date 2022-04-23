@@ -7,20 +7,19 @@ import { CoreModuleModule } from './core/core-module/core-module.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpServiceService } from './core/services/http-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { SearchServiceService } from './core/services/search-service.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
     CoreModuleModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [AppComponent],
-  providers: [HttpServiceService]
+  providers: [HttpServiceService, SearchServiceService],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,11 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, Subject } from 'rxjs';
-import { map, mergeMap, retry } from 'rxjs/operators';
-import {
-  IItem,
-  IVideoYoutube,
-} from 'src/app/youtube/models/search-item-model.component';
+import { debounceTime, map, mergeMap, retry } from 'rxjs/operators';
 import {
   IItemsYoutube,
   IVideo,
@@ -20,8 +16,8 @@ export class HttpServiceService {
   private errorMessage: string = '';
   private subject = new Subject<any>();
 
-  private key: string = 'AIzaSyABKyBQ3_Vv839W4SwpLuU2ms_e9A3g23Q';
-
+  // private key: string = 'AIzaSyABKyBQ3_Vv839W4SwpLuU2ms_e9A3g23Q';
+  private key: string = 'AIzaSyBwU5EcFWPF-Cqccmrzv4OHcMpIn-s7DzY';
   constructor(private HTTPClient: HttpClient) {}
 
   getInfo(word: string): Observable<IVideo[]> {
@@ -30,11 +26,9 @@ export class HttpServiceService {
     return this.HTTPClient.get<IItemsYoutube>(url).pipe(
       retry(3),
       map(({ items }) => {
-        console.log(items);
         this.ids = items
           .filter((item) => item.id.kind === 'youtube#video')
           .map((item) => item.id.videoId);
-        console.log(this.ids);
         return items;
       }),
       mergeMap(() => {
@@ -42,6 +36,7 @@ export class HttpServiceService {
           this.key
         }&id=${this.ids.join(',')}&part=snippet,statistics&maxResults=50`;
         return this.HTTPClient.get<IVideoResponse>(urlVideos).pipe(
+          debounceTime(300),
           map(({ items }) => {
             return items;
           })

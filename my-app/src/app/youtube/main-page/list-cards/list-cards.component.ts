@@ -8,6 +8,7 @@ import {
 } from '../../models/search-result-model.component';
 import { Subscription } from 'rxjs';
 import { data } from 'src/app/mocks/cards-list.mock';
+import { SearchServiceService } from 'src/app/core/services/search-service.service';
 
 @Component({
   selector: 'app-list-cards',
@@ -19,7 +20,10 @@ export class ListCardsComponent {
   private subscription: Subscription;
   private word: string = '';
   public id: string;
-  constructor(private http: HttpServiceService) {}
+  constructor(
+    private http: HttpServiceService,
+    private search: SearchServiceService
+  ) {}
 
   public title = 'Hello. Push search for start';
   /*------sorts-----*/
@@ -31,9 +35,12 @@ export class ListCardsComponent {
   /*-----HTTP------*/
 
   ngOnInit(): void {
+    // this.subscription = this.search.onMessage().subscribe((data) => {
+    //   this.word = data;
+    // });
+
     this.http.getInfo(this.word).subscribe((data) => {
       this.channels = data;
-      console.log(this.channels);
     });
   }
 }
