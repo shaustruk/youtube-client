@@ -1,6 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ShowCardService } from '../../services/show-card.service';
-import { Observable, Subscription } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  Observable,
+  Subject,
+  Subscription,
+} from 'rxjs';
 import { HttpServiceService } from '../../services/http-service.service';
 import { SearchServiceService } from '../../services/search-service.service';
 
@@ -15,7 +21,9 @@ export class SearchAreaComponent {
     searchBtn: 'search',
   };
 
-  private message: string = '';
+  private subjectKeyUp = new Subject<string>();
+
+  private readonly newProperty = this.subjectKeyUp;
 
   constructor(
     private http: HttpServiceService,
@@ -23,13 +31,19 @@ export class SearchAreaComponent {
   ) {}
 
   subscription: Subscription;
-  onSearch(event: Event) {
-    const valueSearch = (<HTMLInputElement>event.target).value;
-    console.log(valueSearch);
-    this.search.sendMessage(valueSearch);
-  }
 
   ngOnInit(): void {
-    // send message to subscribers via observable subject
+    this.subjectKeyUp
+      .pipe(debounceTime(2000), distinctUntilChanged())
+      .subscribe((d) => {
+        console.log(d);
+        this.search.sendMessage(d);
+      });
+  }
+
+  onSearch(event: Event) {
+    const valueSearch = (<HTMLInputElement>event.target).value;
+    this.subjectKeyUp.next(valueSearch);
+    console.log(valueSearch);
   }
 }

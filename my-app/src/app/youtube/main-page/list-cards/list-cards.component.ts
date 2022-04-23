@@ -6,7 +6,7 @@ import {
   IItemsYoutube,
   IVideo,
 } from '../../models/search-result-model.component';
-import { Subscription } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, Subscription } from 'rxjs';
 import { data } from 'src/app/mocks/cards-list.mock';
 import { SearchServiceService } from 'src/app/core/services/search-service.service';
 
@@ -35,12 +35,11 @@ export class ListCardsComponent {
   /*-----HTTP------*/
 
   ngOnInit(): void {
-    // this.subscription = this.search.onMessage().subscribe((data) => {
-    //   this.word = data;
-    // });
-
-    this.http.getInfo(this.word).subscribe((data) => {
-      this.channels = data;
+    this.subscription = this.search.onMessage().subscribe((data) => {
+      this.word = data;
+      this.http.getInfo(this.word).subscribe((data) => {
+        this.channels = data;
+      });
     });
   }
 }
