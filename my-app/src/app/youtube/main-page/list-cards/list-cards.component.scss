@@ -1,0 +1,103 @@
+@import '../../../../SCSS/variable.scss';
+
+.section-cards{
+    padding: 1.5rem;
+    background: #ffffff;
+    border: 0.2rem solid #e5e5e5;
+    min-height: 84vh;
+
+    &__title{
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+      color: $mainBlue;
+      font-size: 3rem;
+    }
+}
+.list-cards {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30rem;
+
+  &__img {
+    margin-bottom: 2rem;
+  }
+
+  &__view-count,
+  &__like,
+  &__dislike,
+  &__comment {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: #4F4F4F;
+    border-radius: 0.5rem;
+  }
+
+  &__btn-more {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+
+    &_link {
+      display: block;
+      width: 7rem;
+      text-align: center;
+      background-color: $mainBlue;
+      color: #e5e5e5;
+    }
+  }
+
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0.5rem 0 0.5rem;
+  background-color: #e5e5e5;
+  border-radius: 0.8rem;
+}
+
+
+.card__content {
+  .card__statistics {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+
+}
+}
+
+.card__title {
+  text-align: center;
+  flex: 1 0 auto;
+  margin-bottom: 3rem;
+  height: 3rem;
+  color: #4F4F4F;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 23px;
+}
+
+
+

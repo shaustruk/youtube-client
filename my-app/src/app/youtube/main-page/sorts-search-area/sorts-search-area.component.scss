@@ -1,0 +1,48 @@
+@import '../../../../SCSS/variable.scss';
+.sorts-area {
+display: flex;
+justify-content: center;
+align-items: center;
+background: #e5e5e5;
+
+
+  &__title {
+  align-self: center;
+  height: 100%;
+  padding-top: 0.9rem;
+  margin-right: 1rem;
+  color: #929292;
+
+  }
+
+}
+.list-sorts {
+display: flex;
+flex-direction: row;
+gap: 1rem;
+font-size: 1rem;
+
+  &__item {
+    display: flex;
+    background-color: #e5e5e5;
+    color: $mainBlue;
+    font-size: 1rem;
+
+  }
+  &__item:hover,
+  &__item:active {
+    text-decoration: underline;
+  }
+
+}
+
+.form-sorts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: $mainBlue;
+
+  &__label {
+    margin-right: 0.5rem;
+  }
+}

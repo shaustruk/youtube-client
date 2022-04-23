@@ -1,0 +1,14 @@
+.user-info {
+  display: flex;
+  margin-left: auto;
+
+  &__info {
+    align-self: flex-end;
+    margin-right: 0.5rem;
+  }
+
+  .material-icons {
+    font-size: 40px;
+    color:#2e7de8;
+  }
+}

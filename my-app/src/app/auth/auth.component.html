@@ -1,0 +1,20 @@
+<div class="auth-page section">
+  <div class="wrapper">
+    <div class="content">
+      <!-- <form class='auth-form' #myForm="ngForm" novalidate (ngSubmit)="submitLogin(myForm)"> -->
+      <form class='auth-form' #myForm="ngForm" novalidate>
+        <div class="auth-form__name">
+          <h2 class="auth-form__title">{{authLabel.title}}</h2>
+          <label for="name">{{authLabel.login}}</label>
+          <input class="auth-form__input" required="" [(ngModel)]="user.login" name="name" id="name" type="text">
+        </div>
+        <div class="auth-form__password">
+          <label for="password">{{authLabel.password}}</label>
+          <input class="auth-form__input" required="" [(ngModel)]="user.password" name="password" id="password"
+            type="password">
+        </div>
+        <button class="auth-form__btn" (click)="goToApp()" type="submit">{{authLabel.title}}</button>
+      </form>
+    </div>
+  </div>
+</div>
