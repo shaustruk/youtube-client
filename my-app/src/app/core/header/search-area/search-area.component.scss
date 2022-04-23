@@ -1,0 +1,33 @@
+.search-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-right: 0.5rem;
+
+  &__input {
+    display: block;
+    align-self: center;
+    padding: 00.5rem;
+    height: 40px;
+    width: 20em;
+    background-color: #efefef;
+    cursor: pointer;
+  }
+
+  &__btn-search {
+    display: block;
+    width: 80px;
+    height: 40px;
+    border-radius: 00.5rem;
+    background-color: #2f80ed;
+    color: #ffffff;
+  }
+
+  &__btn-settings {
+    width: 30px;
+    height: 30px;
+    background: url("/assets/search_settings.svg") no-repeat;
+  }
+}
