@@ -1,7 +1,7 @@
 <div class="section section-cards">
   <div class="cards-box">
-    <div class="list-cards">
-      <div *ngFor="let info of channels |
+    <ul class="list-cards">
+      <li *ngFor="let info of channels |
         filterWord:searchWord |
         filterViews:clickView |
           filterDates:clickDate" class="card">
@@ -52,7 +52,7 @@
             {{info.snippet.publishedAt | date}}
           </div>
         </div>
-      </div>
-    </div>
+      </li>
+    </ul>
   </div>
 </div>

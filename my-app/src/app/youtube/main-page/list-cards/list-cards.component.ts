@@ -2,12 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IItem, IVideoYoutube } from '../../models/search-item-model.component';
 import { ShowCardService } from 'src/app/core/services/show-card.service';
 import { HttpServiceService } from 'src/app/core/services/http-service.service';
-import {
-  IItemsYoutube,
-  IVideo,
-} from '../../models/search-result-model.component';
-import { debounceTime, distinctUntilChanged, map, Subscription } from 'rxjs';
-import { data } from 'src/app/mocks/cards-list.mock';
+import { IVideo } from '../../models/search-result-model.component';
+import { Subscription } from 'rxjs';
 import { SearchServiceService } from 'src/app/core/services/search-service.service';
 
 @Component({

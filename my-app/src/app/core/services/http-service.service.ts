@@ -1,13 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, catchError, Observable, Subject } from 'rxjs';
-import {
-  debounceTime,
-  distinctUntilChanged,
-  map,
-  mergeMap,
-  retry,
-} from 'rxjs/operators';
+import { catchError, Observable, Subject } from 'rxjs';
+import { map, mergeMap, retry } from 'rxjs/operators';
 import {
   IItemsYoutube,
   IVideo,

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { ShowCardService } from '../../services/show-card.service';
 import {
+  BehaviorSubject,
   debounceTime,
   distinctUntilChanged,
   Observable,
@@ -21,7 +22,7 @@ export class SearchAreaComponent {
     searchBtn: 'search',
   };
 
-  private subjectKeyUp = new Subject<string>();
+  private subjectKeyUp = new BehaviorSubject<string>('');
 
   private readonly newProperty = this.subjectKeyUp;
 
@@ -34,7 +35,7 @@ export class SearchAreaComponent {
 
   ngOnInit(): void {
     this.subjectKeyUp
-      .pipe(debounceTime(2000), distinctUntilChanged())
+      .pipe(debounceTime(400), distinctUntilChanged())
       .subscribe((d) => {
         console.log(d);
         this.search.sendMessage(d);
@@ -44,6 +45,5 @@ export class SearchAreaComponent {
   onSearch(event: Event) {
     const valueSearch = (<HTMLInputElement>event.target).value;
     this.subjectKeyUp.next(valueSearch);
-    console.log(valueSearch);
   }
 }

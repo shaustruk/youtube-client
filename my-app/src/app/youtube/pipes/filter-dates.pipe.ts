@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IItem } from '../models/search-item-model.component';
 import { IVideo } from '../models/search-result-model.component';
 
 @Pipe({

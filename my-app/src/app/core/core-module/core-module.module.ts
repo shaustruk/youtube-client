@@ -8,7 +8,6 @@ import { SearchAreaComponent } from '../header/search-area/search-area.component
 import { SettingsButtonComponent } from '../header/settings-button/settings-button.component';
 import { RouterModule } from '@angular/router';
 import { SharedModuleModule } from 'src/app/shared/shared-module/shared-module.module';
-import { HttpServiceService } from '../services/http-service.service';
 
 @NgModule({
   declarations: [
@@ -18,17 +17,8 @@ import { HttpServiceService } from '../services/http-service.service';
     UserInfoComponent,
     SettingsButtonComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    RouterModule,
-    SharedModuleModule
-
-  ],
-  exports: [
-    FooterComponent,
-    HeaderComponent,
-  ],
-  providers: []
+  imports: [CommonModule, FormsModule, RouterModule, SharedModuleModule],
+  exports: [FooterComponent, HeaderComponent],
+  providers: [],
 })
-export class CoreModuleModule { }
+export class CoreModuleModule {}
