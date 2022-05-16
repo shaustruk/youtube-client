@@ -1,0 +1,8 @@
+<div class="user-info">
+  <div [appLogStatus]='userStatus' class="user-info__info" *ngIf="userStatus">{{'You are log-in'}} </div>
+  <div [appLogStatus]='userStatus' class="user-info__info" *ngIf="!userStatus">{{'You have to log-in'}}</div>
+  <span class="material-icons">
+    account_circle
+  </span>
+
+</div>

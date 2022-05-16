@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+
+  &__info {
+    padding: 00.5rem;
+    margin-right: 0.5rem;
+    height: 100%;
+    border-radius: 00.5rem;
+  }
+
+  .material-icons {
+    font-size: 40px;
+    color:#2e7de8;
+  }
+}
+

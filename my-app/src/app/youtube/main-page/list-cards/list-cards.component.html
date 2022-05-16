@@ -1,0 +1,58 @@
+<div class="section section-cards">
+  <div class="cards-box">
+    <ul class="list-cards">
+      <li *ngFor="let info of channels |
+        filterWord:searchWord |
+        filterViews:clickView |
+          filterDates:clickDate" class="card">
+        <div class="card-container">
+          <div class="card__img">
+            <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
+          </div>
+          <div class="card__content">
+            <div class="card__statistics">
+              <div class="card__view-count">
+                <span class="material-icons">
+                  visibility
+                </span>
+                <span>{{info.statistics.viewCount}}</span>
+              </div>
+              <div class="card__like">
+                <span class="material-icons">
+                  thumb_up
+                </span>
+                <span>{{info.statistics.likeCount}}</span>
+              </div>
+              <div class="card__dislike">
+                <span class="material-icons">
+                  thumb_down
+                </span>
+                <span>{{''}}</span>
+              </div>
+              <div class="card__comment">
+                <span class="material-icons">
+                  question_answer
+                </span>
+                <span>{{info.statistics.commentCount}}</span>
+                <span>0</span>
+              </div>
+            </div>
+          </div>
+          <div class="card__title">
+            {{info.snippet.channelTitle}}
+          </div>
+          <div class="card__name">
+            {{(info.snippet.title).slice(0, 50)}}...
+          </div>
+          <div class="card__btn-more">
+            <button mat-flat-button class="card__btn-more_link" [routerLink]="['/main', info.id]">
+              more...</button>
+          </div>
+          <div [appBottomColor]='info.snippet.publishedAt' class="card__bottom">
+            {{info.snippet.publishedAt | date}}
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

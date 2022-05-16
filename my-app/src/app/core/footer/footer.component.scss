@@ -1,0 +1,8 @@
+@import '../../../SCSS/variable.scss';
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem;
+  gap: 1rem;
+  background-color: $mainBlue;
+}

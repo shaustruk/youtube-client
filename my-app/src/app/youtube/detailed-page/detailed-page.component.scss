@@ -1,0 +1,113 @@
+@import '../../../SCSS/variable.scss';
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 84vh;
+  min-width: 100%;
+ }
+
+ .detailed-page{
+
+   &__btn-home  {
+   margin-top: 2rem;
+   padding: 1rem;
+   background-color: $mainBlue;
+   border-radius: 0.5rem;
+   margin-bottom: 1rem;
+
+   }
+
+   &__link-home {
+    display: block;
+    width: 5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    color: aliceblue;
+
+   }
+ }
+
+.card-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  // height: 100%;
+  // width: 100%;
+
+
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background-color: #90877c2e;
+  box-shadow: 0px 5px 34px 14px rgba(53, 159, 240, 0.2) inset;
+
+  &__title {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  &__picture {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__picture_number {
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+    font-size: 2rem;
+    color: aliceblue;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  &__main-info {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__date {
+   max-width: 100%;
+    font-size: 1rem;
+  }
+
+  &__description {
+    justify-content: stretch;
+  }
+
+   &__description_title {
+    font-weight: bold;
+  }
+
+  &__description_info {
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+
+  &__statistics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  }
+
+
+}
