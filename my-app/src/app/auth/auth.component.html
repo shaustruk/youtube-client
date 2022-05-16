@@ -1,4 +1,4 @@
-<div class="auth-page section">
+<div *ngIf="!logStatus" class="auth-page section">
   <div class="wrapper">
     <div class="content">
       <div [appLogStatus]='logStatus' class="content__title" *ngIf="logStatus">{{'You are log-in'}} </div>
