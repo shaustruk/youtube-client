@@ -14,6 +14,12 @@ import { YoutubeRoutingModule } from './youtube-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminPageComponent } from '../admin-page/admin-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { SharedModuleModule } from 'src/app/shared/shared-module/shared-module.module';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BottomColorDirective,
     DetailedPageComponent,
     ErrorPageComponent,
-    AdminPageComponent
+    AdminPageComponent,
   ],
   imports: [
     CommonModule,
@@ -34,8 +40,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     YoutubeRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot(
+      {},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+          strictStateSerializability: true,
+          strictActionSerializability: true,
+          strictActionWithinNgZone: true,
+          strictActionTypeUniqueness: true,
+        },
+      }
+    ),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
   ],
-  exports: []
+  exports: [],
 })
-export class YoutubeModuleModule { }
+export class YoutubeModuleModule {}

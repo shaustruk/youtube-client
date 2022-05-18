@@ -14,14 +14,16 @@
         ],
         "createDefaultProgram": true
       },
-        "extends": [
+      "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
         "airbnb-typescript/base",
         "airbnb-base"
       ],
-      "plugins": ["import"],
-         "rules": {
+      "plugins": [
+        "import"
+      ],
+      "rules": {
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -40,13 +42,16 @@
         ],
         "no-console": "off",
         "import/prefer-default-export": "on",
-        "no-useless-constructor":"off",
-        "no-empty-function":"off",
-        "class-methods-use-this":"off",
-        "max-len": ["error", { "code": 50 }]
-        // "no-undef":"off"
-        // "eslint linebreak-style": "off"
-              }
+        "no-useless-constructor": "off",
+        "no-empty-function": "off",
+        "class-methods-use-this": "off",
+        "max-len": [
+          "error",
+          {
+            "code": 50
+          }
+        ]
+      }
     },
     {
       "files": [
@@ -56,6 +61,14 @@
         "plugin:@angular-eslint/template/recommended"
       ],
       "rules": {}
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "extends": [
+        "plugin:ngrx/recommended"
+      ]
     }
   ]
 }

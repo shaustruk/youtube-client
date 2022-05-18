@@ -10,10 +10,12 @@ import { LoginServiceService } from 'src/app/auth/services/login-service.service
 export class UserInfoComponent {
   public userStatus: boolean = false;
   private subscription: Subscription;
-  constructor(private logoService: LoginServiceService) { }
+  constructor(private logoService: LoginServiceService) {}
 
   ngOnInit(): void {
-    this.subscription = this.logoService.logoStatus().subscribe(status => this.userStatus = status);
+    this.subscription = this.logoService
+      .logoStatus()
+      .subscribe((status) => (this.userStatus = status));
   }
 
   ngOnDestroy() {
