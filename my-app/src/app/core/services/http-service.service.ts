@@ -16,14 +16,14 @@ export class HttpServiceService {
   private errorMessage: string = '';
   private subject = new Subject<string>();
 
-  //private key1: string = 'AIzaSyABKyBQ3_Vv839W4SwpLuU2ms_e9A3g23Q';
+  private key1: string = 'AIzaSyABKyBQ3_Vv839W4SwpLuU2ms_e9A3g23Q';
   //private key: string = 'AIzaSyBwU5EcFWPF-Cqccmrzv4OHcMpIn-s7DzY';
-  private key3: string = 'AIzaSyBAFdaEq03q53cejI6TQPO7W40JSE_oRuE';
+  // private key3: string = 'AIzaSyBAFdaEq03q53cejI6TQPO7W40JSE_oRuE';
 
   constructor(private HTTPClient: HttpClient) {}
 
   getInfo(word: string): Observable<IVideo[]> {
-    const url = `https://www.googleapis.com/youtube/v3/search?key=${this.key3}&type=video&part=snippet&maxResults=15&q=${word}`;
+    const url = `https://www.googleapis.com/youtube/v3/search?key=${this.key1}&type=video&part=snippet&maxResults=15&q=${word}`;
 
     return this.HTTPClient.get<IItemsYoutube>(url).pipe(
       retry(3),
@@ -35,7 +35,7 @@ export class HttpServiceService {
       }),
       mergeMap(() => {
         const urlVideos = `https://www.googleapis.com/youtube/v3/videos?key=${
-          this.key3
+          this.key1
         }&id=${this.ids.join(',')}&part=snippet,statistics&maxResults=15`;
         return this.HTTPClient.get<IVideoResponse>(urlVideos).pipe(
           map(({ items }) => {
@@ -52,7 +52,7 @@ export class HttpServiceService {
   }
 
   getDetailPage(id: string): Observable<IVideo> {
-    const urlVideos = `https://www.googleapis.com/youtube/v3/videos?key=${this.key3}&id=${id}&part=snippet,statistics`;
+    const urlVideos = `https://www.googleapis.com/youtube/v3/videos?key=${this.key1}&id=${id}&part=snippet,statistics`;
     return this.HTTPClient.get<IVideoResponse>(urlVideos).pipe(
       map(({ items }) => {
         return items[0];

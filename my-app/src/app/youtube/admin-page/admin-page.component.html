@@ -8,31 +8,35 @@
         <h2 class="admin-form__main-title">Create new card</h2>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{inputArea['title']}}</mat-label>
-          <input matInput class="admin-form__input" formControlName="title" name="title" ngModel type="text">
+          <input matInput class="admin-form__input" formControlName="title" type="text">
           <mat-error *ngIf="createCardForm.controls['title'].hasError('required')">
             Please enter a title
           </mat-error>
-          <mat-error *ngIf="title.length >0 && title.length <=3">
+          <mat-error
+            *ngIf="createCardForm.controls['title'].value.length >0 && createCardForm.controls['title'].value.length < 3">
             The title is too short
           </mat-error>
-          <mat-error *ngIf="title.length >= 20">
+          <mat-error *ngIf="createCardForm.controls['title'].value.length >= 20">
             The title is too long
           </mat-error>
         </mat-form-field>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{inputArea['description']}}</mat-label>
-          <input matInput class="admin-form__input" formControlName="description" name="description" ngModel type="text"
-            autocomplete="off">
+          <input matInput class="admin-form__input" formControlName="description" type="text">
           <mat-error *ngIf="createCardForm.controls['description'].hasError('required')">
             Please enter a description
           </mat-error>
-          <mat-error *ngIf="description.length > 255">
+          <mat-error
+            *ngIf="createCardForm.controls['description'].value.length >0 && createCardForm.controls['description'].value.length < 3">
+            The title is too short
+          </mat-error>
+          <mat-error *ngIf="createCardForm.controls['description'].value.length > 20">
             The description is too long
           </mat-error>
         </mat-form-field>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{ inputArea['img']}}</mat-label>
-          <input matInput class="admin-form__input" formControlName='img' name="img" type="text" autocomplete="off">
+          <input matInput class="admin-form__input" formControlName='img' type="text" autocomplete="off">
           <mat-error *ngIf="createCardForm.controls['img'].hasError('required')">
             Please enter a link to the image
           </mat-error>
@@ -42,8 +46,7 @@
         </mat-form-field>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{inputArea['link']}}</mat-label>
-          <input matInput class="admin-form__input" formControlName="link" name="link" ngModel type="text"
-            autocomplete="off">
+          <input matInput class="admin-form__input" formControlName="link" type="text" autocomplete="off">
           <mat-error *ngIf="createCardForm.controls['link'].hasError('required')">
             Please enter a link to the video
           </mat-error>
@@ -53,7 +56,7 @@
         </mat-form-field>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{inputArea['date']}}</mat-label>
-          <input matInput class="admin-form__input" formControlName="date" name="date" ngModel type="date"
+          <input matInput class="admin-form__input" formControlName="date" type="date"
             max="{{today | date:'yyyy-MM-dd'}}">
           <mat-error *ngIf="createCardForm.controls['date']">
             Please enter a creation date

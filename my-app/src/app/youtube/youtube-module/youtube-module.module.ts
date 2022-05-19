@@ -20,6 +20,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SharedModuleModule } from 'src/app/shared/shared-module/shared-module.module';
 import { environment } from 'src/environments/environment';
+import { cardsReducer } from 'src/app/redux/reducers/reducer';
+import { cardsEffects } from 'src/app/redux';
 
 @NgModule({
   declarations: [
@@ -41,25 +43,8 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot(
-      {},
-      {
-        runtimeChecks: {
-          strictStateImmutability: true,
-          strictActionImmutability: true,
-          strictStateSerializability: true,
-          strictActionSerializability: true,
-          strictActionWithinNgZone: true,
-          strictActionTypeUniqueness: true,
-        },
-      }
-    ),
-    StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: environment.production,
-    }),
-    EffectsModule.forRoot([]),
-    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forFeature('cardsState', cardsReducer),
+    EffectsModule.forFeature([cardsEffects]),
   ],
   exports: [],
 })

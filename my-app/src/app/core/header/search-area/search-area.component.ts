@@ -36,9 +36,8 @@ export class SearchAreaComponent {
   ngOnInit(): void {
     this.subjectKeyUp
       .pipe(debounceTime(400), distinctUntilChanged())
-      .subscribe((d) => {
-        console.log(d);
-        this.search.sendMessage(d);
+      .subscribe((word) => {
+        this.search.sendMessage(word);
       });
   }
 

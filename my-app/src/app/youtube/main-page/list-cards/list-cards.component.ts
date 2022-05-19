@@ -3,8 +3,13 @@ import { IItem, IVideoYoutube } from '../../models/search-item-model.component';
 import { ShowCardService } from 'src/app/core/services/show-card.service';
 import { HttpServiceService } from 'src/app/core/services/http-service.service';
 import { IVideo } from '../../models/search-result-model.component';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { SearchServiceService } from 'src/app/core/services/search-service.service';
+import { select, Store } from '@ngrx/store';
+import { AppState, CardsState } from 'src/app/redux/state';
+import { ICardCustom } from 'src/app/redux/model';
+import { getYoutubeCards, getYoutubeCardsSuccessful } from 'src/app/redux';
+import { selectYoutubeCard } from 'src/app/redux/selectors/selector';
 
 @Component({
   selector: 'app-list-cards',
@@ -12,13 +17,16 @@ import { SearchServiceService } from 'src/app/core/services/search-service.servi
   styleUrls: ['./list-cards.component.scss'],
 })
 export class ListCardsComponent {
-  public channels: IVideo[] = [];
+  public channelsState: Observable<CardsState>;
+  public customCards: ICardCustom[];
   private subscription: Subscription;
   private word: string = '';
   public id: string;
+
   constructor(
     private http: HttpServiceService,
-    private search: SearchServiceService
+    private search: SearchServiceService,
+    private store: Store<AppState>
   ) {}
 
   public title = 'Hello. Push search for start';
@@ -33,9 +41,19 @@ export class ListCardsComponent {
   ngOnInit(): void {
     this.subscription = this.search.onMessage().subscribe((data) => {
       this.word = data;
-      this.http.getInfo(this.word).subscribe((data) => {
-        this.channels = data;
-      });
+
+      //   this.http.getInfo(this.word).subscribe((data) => {
+      //     this.channels = data;
+      //     console.log(this.channels);
+      //   });
+      // });
+
+      // this.customCards = this.store.select(
+      //   (state) => state.cardsState.cardsCustom
+      // );
+      // this.store.dispatch(getYoutubeCardsSuccessful());
+      this.store.dispatch(getYoutubeCards());
+      this.channelsState = this.store.select((state) => state.cardsState);
     });
   }
 }

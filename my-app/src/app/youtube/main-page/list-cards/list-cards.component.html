@@ -1,10 +1,11 @@
 <div class="section section-cards">
   <div class="cards-box">
     <ul class="list-cards">
-      <li *ngFor="let info of channels |
-        filterWord:searchWord |
-        filterViews:clickView |
-          filterDates:clickDate" class="card">
+      <li *ngFor="let info of (channelsState | async)?.cardsYoutube" class="card">
+        <!-- filterWord:searchWord |
+      filterViews:clickView |
+      filterDates:clickDate -->
+
         <div class="card-container">
           <div class="card__img">
             <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
@@ -52,6 +53,15 @@
             {{info.snippet.publishedAt | date}}
           </div>
         </div>
+      </li> -->
+    </ul>
+    <ul class="list-cards custom-cards">
+      <li class="card">
+        <div class="card__title"></div>
+        <div class="card__description"></div>
+        <div class="card__img"></div>
+        <div class="card__link"></div>
+        <div class="card__date"></div>
       </li>
     </ul>
   </div>

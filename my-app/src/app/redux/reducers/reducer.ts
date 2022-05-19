@@ -1,9 +1,31 @@
-import { createAction, props } from '@ngrx/store';
-import { ICard } from '../model';
+import * as cardsActions from '../actions/actions';
 
-export const getCards = createAction('[main page] GET ALL CUSTOM CARDS');
+import { Action, createReducer, on } from '@ngrx/store';
+import { CardsState } from '../state';
+import { state } from '@angular/animations';
+const initialState: CardsState = {
+  cardsCustom: [],
+  cardsYoutube: [],
+  // @ts-ignore
+  error: null,
+};
 
-export const createCard = createAction(
-  '[admin page] CREATE CUSTOM CARDS',
-  props<{ card: ICard }>()
+const reducer = createReducer(
+  initialState,
+  on(cardsActions.createCard, (state, { card }) => ({
+    ...state,
+    cardsCustom: [...state.cardsCustom, card],
+  })),
+  on(cardsActions.getYoutubeCardsSuccessful, (state, { cardsYoutube }) => ({
+    ...state,
+    cardsYoutube,
+  })),
+  on(cardsActions.getYoutubeCardsFailed, (state, { error }) => {
+    console.log(state);
+    return { ...state, error };
+  })
 );
+
+export function cardsReducer(state: CardsState, action: Action): CardsState {
+  return reducer(state, action);
+}
