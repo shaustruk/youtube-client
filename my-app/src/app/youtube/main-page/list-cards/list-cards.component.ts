@@ -18,13 +18,12 @@ import { selectYoutubeCard } from 'src/app/redux/selectors/selector';
 })
 export class ListCardsComponent {
   public channelsState: Observable<CardsState>;
-  public customCards: ICardCustom[];
+  public customCardsState: Observable<CardsState>;
   private subscription: Subscription;
-  private word: string = '';
+  private word: string;
   public id: string;
 
   constructor(
-    private http: HttpServiceService,
     private search: SearchServiceService,
     private store: Store<AppState>
   ) {}
@@ -41,19 +40,9 @@ export class ListCardsComponent {
   ngOnInit(): void {
     this.subscription = this.search.onMessage().subscribe((data) => {
       this.word = data;
-
-      //   this.http.getInfo(this.word).subscribe((data) => {
-      //     this.channels = data;
-      //     console.log(this.channels);
-      //   });
-      // });
-
-      // this.customCards = this.store.select(
-      //   (state) => state.cardsState.cardsCustom
-      // );
-      // this.store.dispatch(getYoutubeCardsSuccessful());
       this.store.dispatch(getYoutubeCards());
       this.channelsState = this.store.select((state) => state.cardsState);
     });
+    this.customCardsState = this.store.select((state) => state.cardsState);
   }
 }

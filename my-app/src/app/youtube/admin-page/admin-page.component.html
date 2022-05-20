@@ -4,7 +4,7 @@
       <button class="admin-box__btn-home" (click)="goHome()" mat-icon-button>
         <mat-icon class="admin-box__icon-home">home</mat-icon>
       </button>
-      <form class="admin-form" [formGroup]="createCardForm" #form='ngForm' (ngSubmit)="createCard()">
+      <form class="admin-form" [formGroup]="createCardForm" (ngSubmit)="createCard()">
         <h2 class="admin-form__main-title">Create new card</h2>
         <mat-form-field class="admin-form__form">
           <mat-label class="admin-form__title">{{inputArea['title']}}</mat-label>

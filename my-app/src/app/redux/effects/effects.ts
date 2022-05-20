@@ -30,7 +30,6 @@ export class cardsEffects {
   ) {
     this.subscription = this.search.onMessage().subscribe((data) => {
       this.word = data;
-      console.log(this.word);
     });
   }
   loadCardsYoutube$ = createEffect(() =>

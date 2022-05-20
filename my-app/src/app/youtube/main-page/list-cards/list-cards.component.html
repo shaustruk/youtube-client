@@ -5,7 +5,6 @@
         <!-- filterWord:searchWord |
       filterViews:clickView |
       filterDates:clickDate -->
-
         <div class="card-container">
           <div class="card__img">
             <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
@@ -53,15 +52,19 @@
             {{info.snippet.publishedAt | date}}
           </div>
         </div>
-      </li> -->
+      </li>
     </ul>
-    <ul class="list-cards custom-cards">
-      <li class="card">
-        <div class="card__title"></div>
-        <div class="card__description"></div>
-        <div class="card__img"></div>
-        <div class="card__link"></div>
-        <div class="card__date"></div>
+    <ul class="list-cards">
+      <li class="card" *ngFor="let card of (customCardsState |async)?.cardsCustom">
+        <div class="card-container">
+          <div class="card__img">
+            <img src="{{card.img}}" alt="image item">
+          </div>
+          <div class="card__title">{{card.title}}</div>
+          <div class="card__description">{{card.description}}</div>
+          <div class="card__link">{{card.linkVideo}}</div>
+          <div class="card__bottom" [appBottomColor]="card.date">{{card.date}}</div>
+        </div>
       </li>
     </ul>
   </div>

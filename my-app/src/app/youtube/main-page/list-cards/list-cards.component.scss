@@ -14,6 +14,7 @@
       font-size: 3rem;
     }
 }
+
 .list-cards {
   height: 100%;
   display: flex;
@@ -22,6 +23,10 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
+}
+
+.list-cards:nth-child(1){
+  margin-bottom: 1rem;
 }
 
 .card {
