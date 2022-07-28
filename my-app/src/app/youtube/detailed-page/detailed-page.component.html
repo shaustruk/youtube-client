@@ -1,0 +1,56 @@
+<div class="detailed-page section">
+  <div class="wrapper">
+    <div class="detailed-page__btn-home">
+      <a class="detailed-page__link-home" routerLink="/main">
+        home
+      </a>
+    </div>
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="card__picture">
+          <div class="card__picture_img">
+            <img src="{{img}}" alt="image">
+          </div>
+          <div class="card__picture_number">#{{titleChannel}}</div>
+        </div>
+        <div class="card__content">
+          <div class="card__main-info">
+            <div class="card__title">{{titleCard}}
+            </div>
+            <div class="card__date">{{date | date}}</div>
+          </div>
+          <div class="card__description">
+            <p class="card__description_title">Description:</p>
+            <div class="card__description_info">{{(description).slice(0,500)}}...</div>
+          </div>
+          <div class="card__statistics">
+            <div class="card__view-count">
+              <span class="material-icons">
+                visibility
+              </span>
+              <span>{{viewCount}}</span>
+            </div>
+            <div class="card__like">
+              <span class="material-icons">
+                thumb_up
+              </span>
+              <span>{{likeCount}}</span>
+            </div>
+            <div class="card__dislike">
+              <span class="material-icons">
+                thumb_down
+              </span>
+              <span></span>
+            </div>
+            <div class="card__comment">
+              <span class="material-icons">
+                question_answer
+              </span>
+              <span>{{commentCount}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

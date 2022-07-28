@@ -1,0 +1,11 @@
+<article class="section sorts-area">
+  <h3 class="sorts-area__title">{{sortesTitle.titleSort}}</h3>
+  <div class="list-sorts">
+    <button class="list-sorts__item" (click)="onDateSortBtn()">{{sortesTitle.itemsBtn[0]}}</button>
+    <button class="list-sorts__item" (click)="onViewSortBtn()">{{sortesTitle.itemsBtn[1]}}</button>
+    <form class="form-sorts">
+      <label class="form-sorts__label" for="matinPut">{{sortesTitle.itemSearch}}</label>
+      <input type="text" (keyup)="onSearchCard($event)">
+    </form>
+  </div>
+</article>
