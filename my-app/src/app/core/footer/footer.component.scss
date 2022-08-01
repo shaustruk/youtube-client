@@ -2,7 +2,19 @@
 .footer {
   display: flex;
   justify-content: center;
+  height: 6vh;
   padding: 0.5rem;
   gap: 1rem;
-  background-color: $mainBlue;
+  background-color: $btnBlueColor;
+
+}
+
+.links-box {
+  display: flex;
+  align-items: center;
+  &__title {
+    display: block;
+    align-items: center;
+    color: #ffffff;
+}
 }

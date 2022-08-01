@@ -6,16 +6,9 @@
   width: 100%;
   background: #e5e5e5;
 
-  &__logo {
-    height: 50px;
-    width: 50px;
-    color: #2e7de8;
-    align-self: center;
-    margin-right: 1rem;
-  }
-
   &__info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -28,6 +21,7 @@
 
   .search-area {
     display: flex;
+    gap: 10px;
     height: 100%;
     padding: 0.5rem;
 
@@ -39,7 +33,7 @@
   &__btn-exit {
   padding: 0.8rem;
   border-radius: 0.5rem;
-  background-color: $mainBlue;
+  background-color: $btnBlueColor;
   }
 
   &__link-exit {
@@ -49,3 +43,11 @@
     color: aliceblue;
   }
 }
+
+.material-icons {
+  margin-right: 10px;
+  align-self: center;
+  font-size: 50px;
+  color:$btnBlueColor;
+}
+

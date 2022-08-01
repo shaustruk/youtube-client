@@ -9,8 +9,9 @@ export function createPasswordValidator(): ValidatorFn {
     const hasUpperCase = /[A-Z]+/.test(value);
     const hasLowerCase = /[a-z]+/.test(value);
     const numeric = /[0-9]+/.test(value);
-    const symbol = /(?=.*\W)/.test(value);
-    const passwordValid = hasUpperCase && hasLowerCase && numeric && symbol;
+    // const symbol = /(?=.*\W)/.test(value);
+    const passwordValid =
+      hasUpperCase && hasLowerCase && numeric; /**&& symbol*/
     return !passwordValid ? { passwordValidator: true } : null;
   };
 }
