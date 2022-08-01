@@ -10,21 +10,24 @@ import { BehaviorSubject, Observable, Subscription } from 'rxjs';
   selector: 'app-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
-  styles: [`input.ng-invalid.ng-touched {
-     background-color: #de1d1d4f;
-  }`]
+  styles: [
+    `
+      input.ng-invalid.ng-touched {
+        background-color: #de1d1d4f;
+      }
+    `,
+  ],
 })
 export class AuthComponent {
-
   public authLabel = {
     title: 'Login',
     login: 'login',
-    password: 'password'
-  }
+    password: 'password',
+  };
 
   public user: IUser = {
     login: '',
-    password: ''
+    password: '',
   };
 
   public logStatus: boolean = false;
@@ -32,42 +35,44 @@ export class AuthComponent {
 
   public hide: boolean = true;
 
-  constructor(private loginService: LoginServiceService,
+  constructor(
+    private loginService: LoginServiceService,
     private router: Router,
-    private storageService: LocalStorageService) {
-
-  }
-  private login: string = ('');
-  public password: string = ('');
+    private storageService: LocalStorageService
+  ) {}
+  private login: string = '';
+  public password: string = '';
 
   public loginForm: FormGroup;
 
   ngOnInit(): void {
     /*-----form-----*/
     this.loginForm = new FormGroup({
-      "login": new FormControl('', [Validators.required, Validators.email]),
-      "password": new FormControl('', [Validators.required, Validators.minLength(8)]),
-    })
+      login: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
+    });
 
     /*-----login-----*/
     this.loginForm.controls['login'].valueChanges.subscribe((value) => {
       this.login = value;
-    })
+    });
     this.loginForm.controls['password'].valueChanges.subscribe((value) => {
       this.password = value;
-    })
-
+    });
 
     /*-----status-----*/
-    this.subscription = this.loginService.logoStatus().subscribe(status => this.logStatus = status);
-    console.log(this.logStatus)
+    this.subscription = this.loginService
+      .logoStatus()
+      .subscribe((status) => (this.logStatus = status));
+    console.log(this.logStatus);
   }
 
   goToApp() {
     this.loginService.authorization(this.user.login, this.user.password);
     this.loginService.logIn();
     this.loginService.logoStatus();
-
   }
-
 }
