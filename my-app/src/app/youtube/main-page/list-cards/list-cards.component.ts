@@ -20,6 +20,7 @@ export class ListCardsComponent implements OnInit, OnChanges {
   public clickDate = false;
   public clickView = false;
   public searchString = '';
+  public cards = [];
 
   constructor(
     private search: SearchServiceService,
@@ -40,16 +41,17 @@ export class ListCardsComponent implements OnInit, OnChanges {
     });
     this.subscription = this.search.onMessage().subscribe((data) => {
       this.word = data;
-      this.store.dispatch(getYoutubeCards());
+
       this.channelsState = this.store.select((state) => state.cardsState);
+      this.store.dispatch(getYoutubeCards());
     });
     this.customCardsState = this.store.select((state) => state.cardsState);
   }
 
   ngOnChanges(): void {}
 
-  // ngOnDestroy() {
-  //   // unsubscribe to ensure no memory leaks
-  //   this.subscription.unsubscribe();
-  // }
+  ngOnDestroy() {
+    // unsubscribe to ensure no memory leaks
+    this.subscription.unsubscribe();
+  }
 }

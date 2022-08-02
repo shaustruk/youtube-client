@@ -17,26 +17,3 @@ export const selectCustomCard = createSelector(
   (state: CardsState) => state.cardsCustom
 );
 console.log(selectCustomCard, selectYoutubeCard);
-
-export const selectDataCards = createFeatureSelector<DataTableState>(
-  fromReducer.dataTableFeatureKey
-);
-
-export const selectSortDirection = createSelector(
-  selectDataCards,
-  (state: DataTableState) => state.sortDirection
-);
-
-export const selectSortKey = createSelector(
-  selectDataCards,
-  (state: DataTableState) => state.sortKey
-);
-
-export const selectSortedData = createSelector(
-  selectCustomCard,
-  selectYoutubeCard,
-  selectDataCards,
-  selectSortKey,
-  selectSortDirection,
-  (CustomCard, Data)
-);
