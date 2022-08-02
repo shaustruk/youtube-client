@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SearchServiceService } from 'src/app/core/services/search-service.service';
 
 @Component({
   selector: 'app-sorts-search-area',
@@ -6,40 +7,37 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./sorts-search-area.component.scss'],
 })
 export class SortsSearchAreaComponent {
+  constructor(private messageService: SearchServiceService) {}
+
   @Input() isShowSort: boolean;
   public sortesTitle = {
     titleSort: 'Sorting by:',
     itemsBtn: ['date', 'count of views'],
     itemSearch: 'by word or sentance',
-  }
-
-
-  /*--------filterTitle------------*/
+  };
   public searchTitle: string = '';
-  onSearchCard(event: Event) {
-    this.searchTitle = (<HTMLInputElement>event.target).value;
-    this.addSearchInputWord.emit(this.searchTitle);
-  }
-  @Output() addSearchInputWord:
-    EventEmitter<string> = new EventEmitter();
+  public isBtnDatePush: boolean = false;
+  public isBtnViewPush: boolean = false;
 
   /*--------sortDate------------*/
-  public isBtnDatePush: boolean = false;
+
   onDateSortBtn() {
     this.isBtnDatePush = !this.isBtnDatePush;
-    this.datePush.emit(this.isBtnDatePush);
+    console.log(this.isBtnDatePush);
+    this.messageService.sendMessage('sortDate');
   }
-  @Output() datePush:
-    EventEmitter<boolean> = new EventEmitter();
+
+  /*--------filterTitle------------*/
+
+  onSearchCard(event: Event) {
+    this.searchTitle = (<HTMLInputElement>event.target).value;
+    this.messageService.sendMessage(this.searchTitle);
+  }
 
   /*--------sortView------------*/
-  public isBtnViewPush: boolean = false;
+
   onViewSortBtn() {
     this.isBtnViewPush = !this.isBtnViewPush;
-    this.viewPush.emit(this.isBtnViewPush);
+    this.messageService.sendMessage('sortViews');
   }
-  @Output() viewPush:
-    EventEmitter<boolean> = new EventEmitter();
-
-
 }

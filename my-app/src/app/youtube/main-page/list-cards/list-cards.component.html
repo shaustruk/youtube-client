@@ -2,9 +2,6 @@
   <div class="cards-box">
     <ul class="list-cards">
       <li *ngFor="let info of (channelsState | async)?.cardsYoutube" class="card">
-        <!-- filterWord:searchWord |
-      filterViews:clickView |
-      filterDates:clickDate -->
         <div class="card-container">
           <div class="card__img">
             <img src="{{info.snippet.thumbnails.medium.url}}" alt="image item">
@@ -42,7 +39,7 @@
             {{info.snippet.channelTitle}}
           </div>
           <div class="card__name">
-            {{(info.snippet.title).slice(0, 50)}}...
+            {{(info.snippet.title)}}
           </div>
           <div class="card__btn-more">
             <button mat-flat-button class="card__btn-more_link" [routerLink]="['/main', info.id]">

@@ -24,12 +24,7 @@ export class SearchAreaComponent {
 
   private subjectKeyUp = new BehaviorSubject<string>('');
 
-  private readonly newProperty = this.subjectKeyUp;
-
-  constructor(
-    private http: HttpServiceService,
-    private search: SearchServiceService
-  ) {}
+  constructor(private search: SearchServiceService) {}
 
   subscription: Subscription;
 

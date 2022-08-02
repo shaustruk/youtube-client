@@ -25,7 +25,7 @@ font-size: 1rem;
   &__item {
     display: flex;
     background-color: #e5e5e5;
-    color: $mainBlue;
+    color: $btnBlueColor;
     font-size: 1rem;
 
   }
@@ -40,7 +40,7 @@ font-size: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: $mainBlue;
+  color: $btnBlueColor;
 
   &__label {
     margin-right: 0.5rem;

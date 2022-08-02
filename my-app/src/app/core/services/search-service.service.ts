@@ -11,6 +11,7 @@ export class SearchServiceService {
   sendMessage(message: string) {
     this.subject.next(message);
   }
+
   onMessage(): Observable<string> {
     return this.subject.asObservable();
   }

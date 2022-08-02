@@ -34,6 +34,7 @@
   flex-direction: column;
   align-items: center;
   width: 30rem;
+  height: 30rem;
 
   &__img {
     margin-bottom: 2rem;
@@ -101,11 +102,16 @@
   font-weight: 700;
   font-size: 1rem;
   line-height: 28px;
+  text-overflow: clip;
 }
 
 .card__name {
   margin-bottom: 2rem;
+  width: 100%;
   text-align: center;
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden; /* Обрезаем все, что не помещается в область */
+  text-overflow: ellipsis;
 }
 
 
