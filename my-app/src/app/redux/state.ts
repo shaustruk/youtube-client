@@ -4,6 +4,8 @@ import { ICardCustom } from './model';
 export interface CardsState {
   cardsCustom: ICardCustom[];
   cardsYoutube: IVideo[];
+  sortKey: string;
+  setDirection: string;
   error: Error;
 }
 

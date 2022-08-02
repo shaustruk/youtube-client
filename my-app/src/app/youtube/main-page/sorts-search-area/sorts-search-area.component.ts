@@ -23,15 +23,7 @@ export class SortsSearchAreaComponent {
 
   onDateSortBtn() {
     this.isBtnDatePush = !this.isBtnDatePush;
-    console.log(this.isBtnDatePush);
     this.messageService.sendMessage('sortDate');
-  }
-
-  /*--------filterTitle------------*/
-
-  onSearchCard(event: Event) {
-    this.searchTitle = (<HTMLInputElement>event.target).value;
-    this.messageService.sendMessage(this.searchTitle);
   }
 
   /*--------sortView------------*/
@@ -39,5 +31,12 @@ export class SortsSearchAreaComponent {
   onViewSortBtn() {
     this.isBtnViewPush = !this.isBtnViewPush;
     this.messageService.sendMessage('sortViews');
+  }
+
+  /*--------filterTitle------------*/
+
+  onSearchCard(event: Event) {
+    this.searchTitle = (<HTMLInputElement>event.target).value;
+    this.messageService.sendMessage(this.searchTitle);
   }
 }

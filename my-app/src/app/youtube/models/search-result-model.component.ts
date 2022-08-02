@@ -50,3 +50,11 @@ export interface IVideo {
     commentCount: string;
   };
 }
+
+export interface DataTableState {
+  tableData: any[];
+  sortDirection: string;
+  sortKey: string;
+  filterQuery: string;
+  filterBy: string[];
+}

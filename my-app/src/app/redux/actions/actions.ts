@@ -20,3 +20,8 @@ export const createCard = createAction(
   '[admin page] CREATE CUSTOM CARDS',
   props<{ card: ICardCustom }>()
 );
+
+export const sortKey = createAction(
+  '[CARDS EFFECT] Set Sort Key',
+  props<{ sortKey: string }>()
+);

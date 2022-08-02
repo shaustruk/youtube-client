@@ -10,6 +10,7 @@ export class SettingsButtonComponent {
   private isShowBoxSorts: boolean = false;
 
   constructor(private service: ShowCardService) {}
+
   public clickSettingBtn() {
     this.isShowBoxSorts = !this.isShowBoxSorts;
     this.service.showFiltres(this.isShowBoxSorts);
