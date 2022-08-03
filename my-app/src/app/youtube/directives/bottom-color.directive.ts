@@ -1,7 +1,7 @@
 import { Directive, OnInit, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appBottomColor]'
+  selector: '[appBottomColor]',
 })
 export class BottomColorDirective implements OnInit {
   private datePublication: number;
@@ -17,38 +17,31 @@ export class BottomColorDirective implements OnInit {
 
   @Input('appBottomColor') dateAdd: string;
 
-
-  constructor(private dateTag: ElementRef, private renderer: Renderer2) { }
+  constructor(private dateTag: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-
     this.datePublication = Date.parse(this.dateAdd);
-    this.timeFromDatepublicated = (this.today - this.datePublication);
+    this.timeFromDatepublicated = this.today - this.datePublication;
 
-    this.isdateLessSevenDays = this.timeFromDatepublicated <= this.sevenDaysMilisec;
+    this.isdateLessSevenDays =
+      this.timeFromDatepublicated <= this.sevenDaysMilisec;
     this.isdateLessMonth = this.timeFromDatepublicated <= this.oneMonthMiliSec;
     this.isdateMoreMonth = this.timeFromDatepublicated >= this.oneMonthMiliSec;
-    this.isDateMoreSixMonth = this.timeFromDatepublicated >= this.sixMonthMiliSec;
+    this.isDateMoreSixMonth =
+      this.timeFromDatepublicated >= this.sixMonthMiliSec;
 
     const { nativeElement } = this.dateTag;
     if (this.isdateLessSevenDays) {
-      this.renderer.setStyle(nativeElement, 'background-color', '#2f80ed')
+      this.renderer.setStyle(nativeElement, 'background-color', '#2f80ed');
+    } else if (this.isdateLessMonth) {
+      this.renderer.setStyle(nativeElement, 'background-color', 'green');
+    } else if (
+      this.today - this.datePublication >= this.oneMonthMiliSec &&
+      this.today - this.datePublication <= this.sixMonthMiliSec
+    ) {
+      this.renderer.setStyle(nativeElement, 'background-color', 'yellow');
+    } else if (this.isDateMoreSixMonth) {
+      this.renderer.setStyle(nativeElement, 'background-color', 'red');
     }
-    else if (this.isdateLessMonth) {
-      this.renderer.setStyle(nativeElement, 'background-color', 'green')
-    }
-    else if ((this.today - this.datePublication) >= this.oneMonthMiliSec && (this.today - this.datePublication) <= this.sixMonthMiliSec) {
-      this.renderer.setStyle(nativeElement, 'background-color', 'yellow')
-    }
-
-    else if (this.isDateMoreSixMonth) {
-      this.renderer.setStyle(nativeElement, 'background-color', 'red')
-    }
-
-
-
-
-    // this.renderer.setStyle(this.dateTag.nativeElement, 'background-color', 'red');
-
   }
 }

@@ -3,14 +3,13 @@
   display: flex;
   flex-direction: column;
   height: 84vh;
+  background: url('../../assets/5183000.jpg');
 }
 .wrapper {
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .content {
@@ -18,7 +17,6 @@
     margin-bottom: 1rem;
     border-radius: 00.5rem;
     text-align: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 }
 
@@ -31,11 +29,16 @@
   width: 25rem;
   padding: 2rem;
   background-color: #F2F2F2;
+  border: dotted;
+  border-width: 10px 4px;
+  border-radius: 10px 40px;
+  border-color: $btnBlueColor;
 
   &__title {
     font-size: 2rem;
     align-self: start;
-
+    font-family: 'Indie Flower', cursive;
+    color: $btnBlueColor;
    }
 
   &__input {
@@ -60,9 +63,8 @@
     align-self: end;
     width: 6rem;
     padding: 1rem;
-    margin-top: 2rem;
     border-radius: 0.5rem;
-    background-color: $mainBlue;
+    background-color: $btnBlueColor;
     color: aliceblue;
 
   }
@@ -70,5 +72,5 @@
 }
 
 .auth-form__btn:disabled{
-  background-color:  #2e7de870;
+  background-color:  #c5dedb;
 }
