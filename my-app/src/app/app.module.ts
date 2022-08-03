@@ -7,7 +7,6 @@ import { CoreModuleModule } from './core/core-module/core-module.module';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpServiceService } from './core/services/http-service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchServiceService } from './core/services/search-service.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +19,6 @@ import { SearchServiceService } from './core/services/search-service.service';
     HttpClientModule,
   ],
   bootstrap: [AppComponent],
-  providers: [HttpServiceService, SearchServiceService],
+  providers: [HttpServiceService],
 })
 export class AppModule {}

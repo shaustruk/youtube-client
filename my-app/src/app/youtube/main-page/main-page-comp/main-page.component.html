@@ -1,7 +1,6 @@
 <main class="main-page">
   <app-sorts-search-area *ngIf="isShowFilters" (addSearchInputWord)="searchInputWord($event)"
     (datePush)="onDatePush($event)" (viewPush)="onViewPush($event)"></app-sorts-search-area>
-  <!-- <app-list-cards *ngIf="isShowCards" [searchWord]="searchWord" [clickDate]='isSortDate' [clickView]='isSortViews'> -->
   <app-list-cards [searchWord]="searchWord" [clickDate]='isSortDate' [clickView]='isSortViews'>
   </app-list-cards>
 </main>

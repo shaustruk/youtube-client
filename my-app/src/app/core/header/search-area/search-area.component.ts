@@ -24,15 +24,14 @@ export class SearchAreaComponent {
 
   private subjectKeyUp = new BehaviorSubject<string>('');
 
-  private readonly newProperty = this.subjectKeyUp;
-
-  constructor(
-    private http: HttpServiceService,
-    private search: SearchServiceService
-  ) {}
+  constructor(private search: SearchServiceService) {}
 
   subscription: Subscription;
 
+  onSearch(event: Event) {
+    const valueSearch = (<HTMLInputElement>event.target).value;
+    this.subjectKeyUp.next(valueSearch);
+  }
   ngOnInit(): void {
     this.subjectKeyUp
       .pipe(debounceTime(400), distinctUntilChanged())
@@ -40,10 +39,5 @@ export class SearchAreaComponent {
         console.log(d);
         this.search.sendMessage(d);
       });
-  }
-
-  onSearch(event: Event) {
-    const valueSearch = (<HTMLInputElement>event.target).value;
-    this.subjectKeyUp.next(valueSearch);
   }
 }
