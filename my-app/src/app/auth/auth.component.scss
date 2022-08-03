@@ -4,8 +4,6 @@
   flex-direction: column;
   height: 84vh;
   background: url('../../assets/5183000.jpg');
-  font-family: 'Indie Flower', cursive;
-
 }
 .wrapper {
   display: flex;
@@ -67,7 +65,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: $btnBlueColor;
-    color: aliceblue;
+    color: $btnTotleColor;
 
   }
 

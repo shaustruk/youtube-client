@@ -9,7 +9,7 @@
   &__logo {
     height: 50px;
     width: 50px;
-    color: #2e7de8;
+    color: $btnBlueColor;
     align-self: center;
     margin-right: 1rem;
   }
@@ -46,6 +46,6 @@
     width: 5rem;
     border-radius: 0.5rem;
     text-align: center;
-    color: aliceblue;
+    color: $btnTotleColor;
   }
 }
