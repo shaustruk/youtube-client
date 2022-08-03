@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { LocalStorageService } from 'src/app/auth/services/local-storage.service';
 import { LoginServiceService } from 'src/app/auth/services/login-service.service';
 
 @Component({
@@ -10,10 +12,25 @@ import { LoginServiceService } from 'src/app/auth/services/login-service.service
 export class UserInfoComponent {
   public userStatus: boolean = false;
   private subscription: Subscription;
-  constructor(private logoService: LoginServiceService) { }
+  constructor(
+    private auth: LoginServiceService,
+    private storageservice: LocalStorageService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
-    this.subscription = this.logoService.logoStatus().subscribe(status => this.userStatus = status);
+    this.subscription = this.auth
+      .logoStatus()
+      .subscribe((status) => (this.userStatus = status));
+  }
+
+  exitFromApp(status: string) {
+    this.storageservice.clear();
+    this.auth.logOut();
+  }
+
+  goToAdminPage() {
+    this.route.navigate(['/admin']);
   }
 
   ngOnDestroy() {

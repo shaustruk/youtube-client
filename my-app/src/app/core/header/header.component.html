@@ -1,25 +1,14 @@
 <header class="header section">
   <div class="header__info">
     <div class="search-area">
-      <img class="header__logo" src="/assets/logo-play.svg" alt="logo-play">
+      <span class="material-icons">music_video</span>
       <app-search-area></app-search-area>
       <app-settings-button></app-settings-button>
     </div>
-    <app-user-info></app-user-info>
-    <div class="header-btn">
-      <div class="header-btn__btn-exit" mat-icon-button>
-        <a class="header-btn__link-exit" (click)='goToAdminPage()' routerLink="">
-          admin-page
-        </a>
-      </div>
+    <div class="user-area">
+      <app-user-info></app-user-info>
     </div>
-    <div class="header-btn">
-      <div class="header-btn__btn-exit" mat-icon-button>
-        <a class="header-btn__link-exit" (click)='exitFromApp("logout")' routerLink="">
-          exit
-        </a>
-      </div>
-    </div>
+
 
   </div>
 </header>

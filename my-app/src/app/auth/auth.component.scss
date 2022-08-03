@@ -65,12 +65,26 @@
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: $btnBlueColor;
-    color: $btnTotleColor;
-
+    color: #c5dedb;
   }
 
 }
 
 .auth-form__btn:disabled{
   background-color:  #c5dedb;
+  color: $btnTotleColor;
 }
+
+@media screen and (max-width: 940px) {
+ .auth-page {
+    min-height: 86vh;
+  }
+}
+
+@media screen and (max-width: 340px) {
+.auth-form {
+  width: 20rem;
+
+}
+}
+

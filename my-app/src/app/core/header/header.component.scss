@@ -16,6 +16,7 @@
 
   &__info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
@@ -26,26 +27,86 @@
     height: 50px;
   }
 
-  .search-area {
+  .search-area,
+  .user-area {
     display: flex;
-    height: 100%;
+    justify-content: center;
+    gap: 10px;
     padding: 0.5rem;
-
+    align-self: center;
   }
 }
-
 .header-btn {
 
   &__btn-exit {
   padding: 0.8rem;
   border-radius: 0.5rem;
-  background-color: $mainBlue;
+  background-color: $btnBlueColor;
   }
 
   &__link-exit {
     width: 5rem;
     border-radius: 0.5rem;
     text-align: center;
-    color: $btnTotleColor;
+    color: aliceblue;
   }
 }
+
+.material-icons {
+  margin-right: 10px;
+  align-self: center;
+  font-size: 50px;
+  color:$btnBlueColor;
+}
+
+@media screen and (max-width: 940px) {
+
+  .header {
+   height: 8rem;
+
+   &__info {
+    gap:0;
+   }
+
+  .search-area {
+    gap: 2px;
+    padding: 0;
+  }
+
+  .header-btn {
+    &__btn-exit {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      }
+
+    &__link-exit {
+        width: 5rem;
+        border-radius: 0.5rem;
+      }
+  }
+
+}
+}
+
+@media screen and (max-width: 430px) {
+ .search-area {
+    gap: 2px;
+    padding: 0;
+  }
+
+  .header-btn {
+    &__btn-exit {
+      display: flex;
+      justify-content: center;
+      padding: 5px;
+      }
+
+    &__link-exit {
+        width: 5rem;
+        border-radius: 0.5rem;
+      }
+  }
+
+}
+

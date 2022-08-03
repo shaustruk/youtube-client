@@ -31,3 +31,12 @@
     background: url("/assets/search_settings.svg") no-repeat;
   }
 }
+
+@media screen and (max-width: 940px) {
+  .search-box {
+
+    &__input {
+      width: 10rem;
+    }
+}
+}

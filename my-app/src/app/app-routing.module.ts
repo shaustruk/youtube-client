@@ -7,36 +7,43 @@ import { MaterialModule } from './material.module';
 import { AuthGuardService } from './auth/services/auth-guard.service';
 import { ErrorPageComponent } from './youtube/error-page/error-page.component';
 import { AdminPageComponent } from './youtube/admin-page/admin-page.component';
+import { AuthProtectGuard } from './auth/services/auth-protect.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth-module/auth-module.module').then(m => m.AuthModuleModule)
+    loadChildren: () =>
+      import('./auth/auth-module/auth-module.module').then(
+        (m) => m.AuthModuleModule
+      ),
+    canActivate: [AuthProtectGuard],
   },
   {
     path: 'main',
-    loadChildren: () => import('./youtube/youtube-module/youtube-module.module').then(m => m.YoutubeModuleModule),
-    canActivate: [AuthGuardService]
+    loadChildren: () =>
+      import('./youtube/youtube-module/youtube-module.module').then(
+        (m) => m.YoutubeModuleModule
+      ),
+    canActivate: [AuthGuardService],
   },
   {
-    path: 'admin', component: AdminPageComponent, canActivate: [AuthGuardService]
+    path: 'admin',
+    component: AdminPageComponent,
+    canActivate: [AuthGuardService],
   },
   { path: '**', component: ErrorPageComponent },
-]
+];
 
 @NgModule({
-  declarations: [
-
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     BrowserModule,
     MaterialModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
-
+    RouterModule.forRoot(routes),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

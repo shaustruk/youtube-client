@@ -1,24 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
+@import '../../../../SCSS/variable.scss';
+
 .user-info {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: auto;
+  gap: 1rem;
 
   &__info {
     padding: 00.5rem;
     margin-right: 0.5rem;
     height: 100%;
-    border-radius: 00.5rem;
+    width: 5rem;
   }
 
   .material-icons {
     font-size: 40px;
-    color:#2e7de8;
+    color: $btnBlueColor;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 2.5rem;
+    padding: 5px;
+    border-radius: 00.5rem;
+    background-color: $btnBlueColor;
+  }
+
+  .admin__admin-link,
+  .exit__exit-link {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
   }
 }
+
+
+
+
 
