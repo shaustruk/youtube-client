@@ -12,7 +12,7 @@ import { LocalStorageService } from './local-storage.service';
 @Injectable({
   providedIn: 'root',
 })
-export class AuthGuardService implements CanActivate {
+export class AuthProtectGuard implements CanActivate {
   constructor(
     private routers: Router,
     private storageService: LocalStorageService
@@ -25,13 +25,10 @@ export class AuthGuardService implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.storageService.getItem('login')) {
+    if (!this.storageService.getItem('login')) {
       return true;
     }
-
-    this.routers.navigate(['/auth']);
+    this.routers.navigate(['/main']);
     return false;
-
-    // return this.auth.isAuth();
   }
 }
